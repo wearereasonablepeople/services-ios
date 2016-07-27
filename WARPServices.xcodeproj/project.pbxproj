@@ -11,6 +11,7 @@
 		CE7BC9A31D48BB4C007D181B /* WARPServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BC9981D48BB4C007D181B /* WARPServices.framework */; };
 		CE7BC9A81D48BB4C007D181B /* WARPServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9A71D48BB4C007D181B /* WARPServicesTests.swift */; };
 		CE7BC9B31D48BC50007D181B /* SegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9B21D48BC50007D181B /* SegueHandler.swift */; };
+		CE7BC9BF1D48E53F007D181B /* NSDateComparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9BE1D48E53F007D181B /* NSDateComparable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		CE7BC9A71D48BB4C007D181B /* WARPServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WARPServicesTests.swift; sourceTree = "<group>"; };
 		CE7BC9A91D48BB4C007D181B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE7BC9B21D48BC50007D181B /* SegueHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandler.swift; sourceTree = "<group>"; };
+		CE7BC9BE1D48E53F007D181B /* NSDateComparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateComparable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 			children = (
 				CE7BC99B1D48BB4C007D181B /* WARPServices.h */,
 				CE7BC9B21D48BC50007D181B /* SegueHandler.swift */,
+				CE7BC9BE1D48E53F007D181B /* NSDateComparable.swift */,
 				CE7BC99D1D48BB4C007D181B /* Info.plist */,
 			);
 			path = WARPServices;
@@ -197,6 +200,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7BC9BF1D48E53F007D181B /* NSDateComparable.swift in Sources */,
 				CE7BC9B31D48BC50007D181B /* SegueHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +389,7 @@
 				CE7BC9AE1D48BB4C007D181B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE7BC9AF1D48BB4C007D181B /* Build configuration list for PBXNativeTarget "WARPServicesTests" */ = {
 			isa = XCConfigurationList;
@@ -393,6 +398,7 @@
 				CE7BC9B11D48BB4C007D181B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
