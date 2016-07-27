@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		CE7BC99C1D48BB4C007D181B /* WARPServices.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7BC99B1D48BB4C007D181B /* WARPServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE7BC9A31D48BB4C007D181B /* WARPServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BC9981D48BB4C007D181B /* WARPServices.framework */; };
-		CE7BC9A81D48BB4C007D181B /* WARPServicesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9A71D48BB4C007D181B /* WARPServicesTests.swift */; };
 		CE7BC9B31D48BC50007D181B /* SegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9B21D48BC50007D181B /* SegueHandler.swift */; };
 		CE7BC9BF1D48E53F007D181B /* NSDateComparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9BE1D48E53F007D181B /* NSDateComparable.swift */; };
 /* End PBXBuildFile section */
@@ -29,7 +28,6 @@
 		CE7BC99B1D48BB4C007D181B /* WARPServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WARPServices.h; sourceTree = "<group>"; };
 		CE7BC99D1D48BB4C007D181B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE7BC9A21D48BB4C007D181B /* WARPServicesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WARPServicesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		CE7BC9A71D48BB4C007D181B /* WARPServicesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WARPServicesTests.swift; sourceTree = "<group>"; };
 		CE7BC9A91D48BB4C007D181B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE7BC9B21D48BC50007D181B /* SegueHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandler.swift; sourceTree = "<group>"; };
 		CE7BC9BE1D48E53F007D181B /* NSDateComparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateComparable.swift; sourceTree = "<group>"; };
@@ -86,7 +84,6 @@
 		CE7BC9A61D48BB4C007D181B /* WARPServicesTests */ = {
 			isa = PBXGroup;
 			children = (
-				CE7BC9A71D48BB4C007D181B /* WARPServicesTests.swift */,
 				CE7BC9A91D48BB4C007D181B /* Info.plist */,
 			);
 			path = WARPServicesTests;
@@ -209,7 +206,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE7BC9A81D48BB4C007D181B /* WARPServicesTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
