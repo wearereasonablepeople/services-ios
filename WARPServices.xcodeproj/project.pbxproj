@@ -11,6 +11,7 @@
 		CE7BC9A31D48BB4C007D181B /* WARPServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BC9981D48BB4C007D181B /* WARPServices.framework */; };
 		CE7BC9B31D48BC50007D181B /* SegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9B21D48BC50007D181B /* SegueHandler.swift */; };
 		CE7BC9BF1D48E53F007D181B /* NSDateComparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9BE1D48E53F007D181B /* NSDateComparable.swift */; };
+		CE7BC9C11D48E98C007D181B /* NSDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9C01D48E98C007D181B /* NSDateTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +32,7 @@
 		CE7BC9A91D48BB4C007D181B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE7BC9B21D48BC50007D181B /* SegueHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandler.swift; sourceTree = "<group>"; };
 		CE7BC9BE1D48E53F007D181B /* NSDateComparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateComparable.swift; sourceTree = "<group>"; };
+		CE7BC9C01D48E98C007D181B /* NSDateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 		CE7BC9A61D48BB4C007D181B /* WARPServicesTests */ = {
 			isa = PBXGroup;
 			children = (
+				CE7BC9C01D48E98C007D181B /* NSDateTests.swift */,
 				CE7BC9A91D48BB4C007D181B /* Info.plist */,
 			);
 			path = WARPServicesTests;
@@ -206,6 +209,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE7BC9C11D48E98C007D181B /* NSDateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
