@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE024FA71D4B431B00658D0D /* HTTPMethodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE024FA61D4B431B00658D0D /* HTTPMethodType.swift */; };
+		CE4BF2681D4B4631005C0244 /* HTTPMethodTypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4BF2671D4B4631005C0244 /* HTTPMethodTypeTests.swift */; };
 		CE7BC99C1D48BB4C007D181B /* WARPServices.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7BC99B1D48BB4C007D181B /* WARPServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE7BC9A31D48BB4C007D181B /* WARPServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BC9981D48BB4C007D181B /* WARPServices.framework */; };
 		CE7BC9B31D48BC50007D181B /* SegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9B21D48BC50007D181B /* SegueHandler.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		CE024FA61D4B431B00658D0D /* HTTPMethodType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethodType.swift; sourceTree = "<group>"; };
+		CE4BF2671D4B4631005C0244 /* HTTPMethodTypeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethodTypeTests.swift; sourceTree = "<group>"; };
 		CE7BC9981D48BB4C007D181B /* WARPServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WARPServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7BC99B1D48BB4C007D181B /* WARPServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WARPServices.h; sourceTree = "<group>"; };
 		CE7BC99D1D48BB4C007D181B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				CE7BC9C01D48E98C007D181B /* NSDateTests.swift */,
+				CE4BF2671D4B4631005C0244 /* HTTPMethodTypeTests.swift */,
 				CE7BC9A91D48BB4C007D181B /* Info.plist */,
 			);
 			path = WARPServicesTests;
@@ -213,6 +216,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4BF2681D4B4631005C0244 /* HTTPMethodTypeTests.swift in Sources */,
 				CE7BC9C11D48E98C007D181B /* NSDateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
