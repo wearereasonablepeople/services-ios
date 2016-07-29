@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE024FA71D4B431B00658D0D /* HTTPMethodType.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE024FA61D4B431B00658D0D /* HTTPMethodType.swift */; };
 		CE7BC99C1D48BB4C007D181B /* WARPServices.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7BC99B1D48BB4C007D181B /* WARPServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE7BC9A31D48BB4C007D181B /* WARPServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BC9981D48BB4C007D181B /* WARPServices.framework */; };
 		CE7BC9B31D48BC50007D181B /* SegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9B21D48BC50007D181B /* SegueHandler.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE024FA61D4B431B00658D0D /* HTTPMethodType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethodType.swift; sourceTree = "<group>"; };
 		CE7BC9981D48BB4C007D181B /* WARPServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WARPServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7BC99B1D48BB4C007D181B /* WARPServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WARPServices.h; sourceTree = "<group>"; };
 		CE7BC99D1D48BB4C007D181B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				CE7BC99B1D48BB4C007D181B /* WARPServices.h */,
 				CE7BC9B21D48BC50007D181B /* SegueHandler.swift */,
 				CE7BC9BE1D48E53F007D181B /* NSDateComparable.swift */,
+				CE024FA61D4B431B00658D0D /* HTTPMethodType.swift */,
 				CE7BC99D1D48BB4C007D181B /* Info.plist */,
 			);
 			path = WARPServices;
@@ -200,6 +203,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE024FA71D4B431B00658D0D /* HTTPMethodType.swift in Sources */,
 				CE7BC9BF1D48E53F007D181B /* NSDateComparable.swift in Sources */,
 				CE7BC9B31D48BC50007D181B /* SegueHandler.swift in Sources */,
 			);
