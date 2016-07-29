@@ -8,19 +8,15 @@
 
 import Foundation
 
-struct HTTP {
-    enum Method: String {
+public struct HTTP {
+    public enum Method: String {
         case OPTIONS
         case GET, HEAD, POST, PUT
         case PATCH, DELETE, TRACE, CONNECT
     }
 }
 
-protocol HTTPMethodType {
-    var httpMethod: HTTP.Method { get }
-}
-
-extension NSMutableURLRequest: HTTPMethodType {
+public extension NSMutableURLRequest {
     var httpMethod: HTTP.Method {
         get {
             guard let method = HTTP.Method(rawValue: self.HTTPMethod) else {
