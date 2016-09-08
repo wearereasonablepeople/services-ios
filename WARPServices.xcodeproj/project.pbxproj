@@ -14,6 +14,7 @@
 		CE7BC9B31D48BC50007D181B /* SegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9B21D48BC50007D181B /* SegueHandler.swift */; };
 		CE7BC9BF1D48E53F007D181B /* NSDateComparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9BE1D48E53F007D181B /* NSDateComparable.swift */; };
 		CE7BC9C11D48E98C007D181B /* NSDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9C01D48E98C007D181B /* NSDateTests.swift */; };
+		CE866F5A1D81896600B5A9DD /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE866F591D81896600B5A9DD /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +38,7 @@
 		CE7BC9B21D48BC50007D181B /* SegueHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandler.swift; sourceTree = "<group>"; };
 		CE7BC9BE1D48E53F007D181B /* NSDateComparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateComparable.swift; sourceTree = "<group>"; };
 		CE7BC9C01D48E98C007D181B /* NSDateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateTests.swift; sourceTree = "<group>"; };
+		CE866F591D81896600B5A9DD /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +85,7 @@
 				CE7BC9B21D48BC50007D181B /* SegueHandler.swift */,
 				CE7BC9BE1D48E53F007D181B /* NSDateComparable.swift */,
 				CE024FA61D4B431B00658D0D /* HTTPMethod.swift */,
+				CE866F591D81896600B5A9DD /* ColorExtension.swift */,
 				CE7BC99D1D48BB4C007D181B /* Info.plist */,
 			);
 			path = WARPServices;
@@ -209,6 +212,7 @@
 				CE024FA71D4B431B00658D0D /* HTTPMethod.swift in Sources */,
 				CE7BC9BF1D48E53F007D181B /* NSDateComparable.swift in Sources */,
 				CE7BC9B31D48BC50007D181B /* SegueHandler.swift in Sources */,
+				CE866F5A1D81896600B5A9DD /* ColorExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
