@@ -12,8 +12,6 @@
 		CE7BC99C1D48BB4C007D181B /* WARPServices.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7BC99B1D48BB4C007D181B /* WARPServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE7BC9A31D48BB4C007D181B /* WARPServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BC9981D48BB4C007D181B /* WARPServices.framework */; };
 		CE7BC9B31D48BC50007D181B /* SegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9B21D48BC50007D181B /* SegueHandler.swift */; };
-		CE7BC9BF1D48E53F007D181B /* NSDateComparable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9BE1D48E53F007D181B /* NSDateComparable.swift */; };
-		CE7BC9C11D48E98C007D181B /* NSDateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9C01D48E98C007D181B /* NSDateTests.swift */; };
 		CE866F5A1D81896600B5A9DD /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE866F591D81896600B5A9DD /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -36,8 +34,6 @@
 		CE7BC9A21D48BB4C007D181B /* WARPServicesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WARPServicesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7BC9A91D48BB4C007D181B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE7BC9B21D48BC50007D181B /* SegueHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandler.swift; sourceTree = "<group>"; };
-		CE7BC9BE1D48E53F007D181B /* NSDateComparable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateComparable.swift; sourceTree = "<group>"; };
-		CE7BC9C01D48E98C007D181B /* NSDateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateTests.swift; sourceTree = "<group>"; };
 		CE866F591D81896600B5A9DD /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -83,7 +79,6 @@
 			children = (
 				CE7BC99B1D48BB4C007D181B /* WARPServices.h */,
 				CE7BC9B21D48BC50007D181B /* SegueHandler.swift */,
-				CE7BC9BE1D48E53F007D181B /* NSDateComparable.swift */,
 				CE024FA61D4B431B00658D0D /* HTTPMethod.swift */,
 				CE866F591D81896600B5A9DD /* ColorExtension.swift */,
 				CE7BC99D1D48BB4C007D181B /* Info.plist */,
@@ -94,7 +89,6 @@
 		CE7BC9A61D48BB4C007D181B /* WARPServicesTests */ = {
 			isa = PBXGroup;
 			children = (
-				CE7BC9C01D48E98C007D181B /* NSDateTests.swift */,
 				CE4BF2671D4B4631005C0244 /* HTTPMethodTypeTests.swift */,
 				CE7BC9A91D48BB4C007D181B /* Info.plist */,
 			);
@@ -158,14 +152,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = "Oleksii Dykan";
 				TargetAttributes = {
 					CE7BC9971D48BB4C007D181B = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					CE7BC9A11D48BB4C007D181B = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = VLLVL72AJ4;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -210,7 +207,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE024FA71D4B431B00658D0D /* HTTPMethod.swift in Sources */,
-				CE7BC9BF1D48E53F007D181B /* NSDateComparable.swift in Sources */,
 				CE7BC9B31D48BC50007D181B /* SegueHandler.swift in Sources */,
 				CE866F5A1D81896600B5A9DD /* ColorExtension.swift in Sources */,
 			);
@@ -221,7 +217,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE4BF2681D4B4631005C0244 /* HTTPMethodTypeTests.swift in Sources */,
-				CE7BC9C11D48E98C007D181B /* NSDateTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,8 +245,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -299,8 +296,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -320,6 +319,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -331,6 +331,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -343,6 +344,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -350,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -361,26 +364,31 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.wearereasonablepeople.WARPServices;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		CE7BC9B01D48BB4C007D181B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = VLLVL72AJ4;
 				INFOPLIST_FILE = WARPServicesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wearereasonablepeople.WARPServicesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		CE7BC9B11D48BB4C007D181B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				DEVELOPMENT_TEAM = VLLVL72AJ4;
 				INFOPLIST_FILE = WARPServicesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wearereasonablepeople.WARPServicesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

@@ -12,20 +12,20 @@ import XCTest
 class HTTPMethodTypeTests: XCTestCase {
     
     func testMutableRequest() {
-        let request = NSMutableURLRequest(URL: NSURL(string: "http://google.com")!)
+        let request = NSMutableURLRequest(url: URL(string: "http://google.com")!)
         
-        XCTAssertEqual(request.httpMethod, HTTP.Method.GET)
-        XCTAssertEqual(request.HTTPMethod, HTTP.Method.GET.rawValue)
+        XCTAssertEqual(request.method, HTTP.Method.GET)
+        XCTAssertEqual(request.httpMethod, HTTP.Method.GET.rawValue)
         
-        request.httpMethod = .POST
-        XCTAssertNotEqual(request.httpMethod, HTTP.Method.GET)
-        XCTAssertEqual(request.httpMethod, HTTP.Method.POST)
-        XCTAssertEqual(request.HTTPMethod, HTTP.Method.POST.rawValue)
+        request.method = .POST
+        XCTAssertNotEqual(request.method, HTTP.Method.GET)
+        XCTAssertEqual(request.method, HTTP.Method.POST)
+        XCTAssertEqual(request.httpMethod, HTTP.Method.POST.rawValue)
         
-        request.HTTPMethod = "PUT"
-        XCTAssertNotEqual(request.httpMethod, HTTP.Method.POST)
-        XCTAssertEqual(request.httpMethod, HTTP.Method.PUT)
-        XCTAssertEqual(request.HTTPMethod, HTTP.Method.PUT.rawValue)
+        request.httpMethod = "PUT"
+        XCTAssertNotEqual(request.method, HTTP.Method.POST)
+        XCTAssertEqual(request.method, HTTP.Method.PUT)
+        XCTAssertEqual(request.httpMethod, HTTP.Method.PUT.rawValue)
     }
 
 }

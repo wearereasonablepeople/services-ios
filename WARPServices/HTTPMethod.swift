@@ -17,16 +17,16 @@ public struct HTTP {
 }
 
 public extension NSMutableURLRequest {
-    var httpMethod: HTTP.Method {
+    var method: HTTP.Method {
         get {
-            guard let method = HTTP.Method(rawValue: self.HTTPMethod) else {
+            guard let method = HTTP.Method(rawValue: self.httpMethod) else {
                 fatalError("HTTP Method is invalid")
             }
             return method
         }
         
         set {
-            self.HTTPMethod = newValue.rawValue
+            self.httpMethod = newValue.rawValue
         }
     }
 }
