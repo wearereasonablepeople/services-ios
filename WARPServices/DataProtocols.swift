@@ -16,7 +16,7 @@ public protocol DataContaining {
 public protocol ItemsProviding {
     associatedtype ItemType
     var numberOfItems: Int { get }
-    func item(atIndex index: Int) -> ItemType
+    func item(at index: Int) -> ItemType
 }
 
 public protocol CellIdentifierProvider {
@@ -29,7 +29,7 @@ public extension ItemsProviding where Self: DataContaining, Self.DataType == Sel
         return data.count
     }
     
-    public func item(atIndex index: Int) -> ItemType {
+    public func item(at index: Int) -> ItemType {
         return data[index]
     }
 }

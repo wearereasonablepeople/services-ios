@@ -31,7 +31,7 @@ public extension TableViewDataSource where Self: CellConfiguring, Self: ItemsPro
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier(for: indexPath), for: indexPath)
         
         if let cell = cell as? CellType {
-            configure(cell: cell, for: item(atIndex: indexPath.row))
+            configure(cell: cell, for: item(at: indexPath.row))
         }
         
         return cell
