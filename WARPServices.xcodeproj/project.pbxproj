@@ -11,6 +11,7 @@
 		CE46DE9A1D99429A001D47D9 /* DataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE991D99429A001D47D9 /* DataProtocols.swift */; };
 		CE46DE9C1D994428001D47D9 /* ConfiguringProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE9B1D994428001D47D9 /* ConfiguringProtocols.swift */; };
 		CE46DE9E1D994500001D47D9 /* TableViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE9D1D994500001D47D9 /* TableViewProtocols.swift */; };
+		CE46DEA01D994C19001D47D9 /* TableViewProtocolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE9F1D994C19001D47D9 /* TableViewProtocolsTests.swift */; };
 		CE7BC99C1D48BB4C007D181B /* WARPServices.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7BC99B1D48BB4C007D181B /* WARPServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE7BC9A31D48BB4C007D181B /* WARPServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BC9981D48BB4C007D181B /* WARPServices.framework */; };
 		CE7BC9B31D48BC50007D181B /* SegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9B21D48BC50007D181B /* SegueHandler.swift */; };
@@ -32,6 +33,7 @@
 		CE46DE991D99429A001D47D9 /* DataProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProtocols.swift; sourceTree = "<group>"; };
 		CE46DE9B1D994428001D47D9 /* ConfiguringProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguringProtocols.swift; sourceTree = "<group>"; };
 		CE46DE9D1D994500001D47D9 /* TableViewProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewProtocols.swift; sourceTree = "<group>"; };
+		CE46DE9F1D994C19001D47D9 /* TableViewProtocolsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewProtocolsTests.swift; sourceTree = "<group>"; };
 		CE7BC9981D48BB4C007D181B /* WARPServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WARPServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7BC99B1D48BB4C007D181B /* WARPServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WARPServices.h; sourceTree = "<group>"; };
 		CE7BC99D1D48BB4C007D181B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 			isa = PBXGroup;
 			children = (
 				CE7BC9A91D48BB4C007D181B /* Info.plist */,
+				CE46DE9F1D994C19001D47D9 /* TableViewProtocolsTests.swift */,
 			);
 			path = WARPServicesTests;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE46DEA01D994C19001D47D9 /* TableViewProtocolsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,11 +391,13 @@
 		CE7BC9B01D48BB4C007D181B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = VLLVL72AJ4;
 				INFOPLIST_FILE = WARPServicesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.wearereasonablepeople.WARPServicesTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -399,6 +405,7 @@
 		CE7BC9B11D48BB4C007D181B /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = VLLVL72AJ4;
 				INFOPLIST_FILE = WARPServicesTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
