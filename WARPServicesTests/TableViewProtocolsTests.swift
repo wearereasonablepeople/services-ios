@@ -9,20 +9,43 @@
 import XCTest
 import WARPServices
 
-struct StringSource: DataContaining, ItemsProviding {
-    typealias ItemType = String
-    let data = ["Some", "test", "strings"]
+class SourceProvider: DataContaining, ItemsProviding {
+    struct SourceItem: CellIdentifierProvider {
+        let value: String
+        let cellIdentifier: SourceProvider.CellIdentifier
+    }
+    typealias ItemType = SourceItem
+
+    var sourceValidationCallback: ((SourceItem) -> Void)?
+    let data: [SourceItem] = [SourceItem(value: "Some", cellIdentifier: .some), SourceItem(value: "test", cellIdentifier: .test), SourceItem(value: "strings", cellIdentifier: .test)]
 }
 
-extension StringSource: TableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+extension SourceProvider: CellProviderType, TableViewDataSource {
+    typealias CellType = UITableViewCell
+    typealias CellItemType = SourceItem
+    enum CellIdentifier: String {
+        case test, some
+    }
+    
+    func configure(cell: UITableViewCell, for item: SourceItem) {
+        sourceValidationCallback?(item)
+    }
+}
+
+extension SourceProvider.SourceItem: Equatable {}
+func == (lhs: SourceProvider.SourceItem, rhs: SourceProvider.SourceItem) -> Bool {
+    return lhs.value == rhs.value && lhs.cellIdentifier == rhs.cellIdentifier
+}
+
+class MockTableView: UITableView {
+    override func dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
 }
 
 class TableViewProtocolsTests: XCTestCase {
     func testDataContainingAndItemsProvidingExtension() {
-        let source = StringSource()
+        let source = SourceProvider()
         
         XCTAssertEqual(source.numberOfItems, source.data.count)
         for (index, element) in source.data.enumerated() {
@@ -31,12 +54,25 @@ class TableViewProtocolsTests: XCTestCase {
     }
     
     func testItemsProvidingAndTableViewDataSourceExtension() {
-        let source = StringSource()
+        let source = SourceProvider()
         let tableView = UITableView()
         
         XCTAssertEqual(source.numberOfSections(in: tableView), 1)
         XCTAssertEqual(source.tableView(tableView, numberOfRowsInSection: 0), source.data.count)
         XCTAssertEqual(source.tableView(tableView, titleForFooterInSection: 0), nil)
         XCTAssertEqual(source.tableView(tableView, titleForHeaderInSection: 0), nil)
+    }
+    
+    func testTableViewConfigurable() {
+        let source = SourceProvider()
+        let tableView = MockTableView()
+        
+        for (index, element) in source.data.enumerated() {
+            let indexPath = IndexPath(row: index, section: 0)
+            source.sourceValidationCallback = { item in
+                XCTAssertEqual(item, element)
+            }
+            _ = source.tableView(tableView, cellForRowAt: indexPath)
+        }
     }
 }
