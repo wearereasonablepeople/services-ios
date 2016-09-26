@@ -8,40 +8,40 @@
 
 import UIKit
 
-protocol DataContaining {
+public protocol DataContaining {
     associatedtype DataType
     var data: [Self.DataType] { get }
 }
 
-protocol ItemsProviding {
+public protocol ItemsProviding {
     associatedtype ItemType
     var numberOfItems: Int { get }
     func item(atIndex index: Int) -> ItemType
 }
 
-protocol CellIdentifierProvider {
+public protocol CellIdentifierProvider {
     associatedtype CellIdentifier
     var cellIdentifier: CellIdentifier { get }
 }
 
-extension ItemsProviding where Self: DataContaining, Self.DataType == Self.ItemType {
-    var numberOfItems: Int {
+public extension ItemsProviding where Self: DataContaining, Self.DataType == Self.ItemType {
+    public var numberOfItems: Int {
         return data.count
     }
     
-    func item(atIndex index: Int) -> ItemType {
+    public func item(atIndex index: Int) -> ItemType {
         return data[index]
     }
 }
 
-extension TableViewDataSource where Self: ItemsProviding {
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+public extension TableViewDataSource where Self: ItemsProviding {
+    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numberOfItems
     }
 }
 
-extension CellProviderType where Self: DataContaining, Self: CellHandlerType, Self.DataType: CellIdentifierProvider, Self.DataType.CellIdentifier == CellIdentifier {
-    func identifier(for indexPath: NSIndexPath) -> CellIdentifier {
+public extension CellProviderType where Self: DataContaining, Self: CellHandlerType, Self.DataType: CellIdentifierProvider, Self.DataType.CellIdentifier == CellIdentifier {
+    public func identifier(for indexPath: NSIndexPath) -> CellIdentifier {
         return data[indexPath.row].cellIdentifier
     }
 }
