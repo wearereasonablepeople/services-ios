@@ -25,7 +25,7 @@ public protocol CellHandlerType {
 }
 
 public protocol CellProviderType: CellHandlerType, CellConfiguring {
-    func identifier(for indexPath: NSIndexPath) -> CellIdentifier
+    func identifier(for indexPath: IndexPath) -> CellIdentifier
 }
 
 // MARK: - Extensions
@@ -37,7 +37,7 @@ public extension TableViewDataSourceProxyType where Self: TableViewType, Self: T
 }
 
 public extension CellProviderType where Self.CellIdentifier.RawValue == String {
-    public func identifier(for indexPath: NSIndexPath) -> String {
+    public func identifier(for indexPath: IndexPath) -> String {
         return identifier(for: indexPath).rawValue
     }
 }

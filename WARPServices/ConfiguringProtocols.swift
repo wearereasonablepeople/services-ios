@@ -8,27 +8,27 @@
 
 import UIKit
 
-protocol Configurable {
+public protocol Configurable {
     associatedtype DataType
     func configure(with data: DataType)
 }
 
-protocol CellConfiguring {
+public protocol CellConfiguring {
     associatedtype CellItemType
     associatedtype CellType
     func configure(cell: CellType, for item: CellItemType)
-    func identifier(for indexPath: NSIndexPath) -> String
+    func identifier(for indexPath: IndexPath) -> String
 }
 
-extension CellConfiguring where CellType: Configurable, CellType.DataType == CellItemType {
-    func configure(cell: CellType, for item: CellItemType) {
+public extension CellConfiguring where CellType: Configurable, CellType.DataType == CellItemType {
+    public func configure(cell: CellType, for item: CellItemType) {
         cell.configure(with: item)
     }
 }
 
-extension TableViewDataSource where Self: CellConfiguring, Self: ItemsProviding, Self.CellItemType == Self.ItemType {
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier(for: indexPath as NSIndexPath), for: indexPath)
+public extension TableViewDataSource where Self: CellConfiguring, Self: ItemsProviding, Self.CellItemType == Self.ItemType {
+    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier(for: indexPath), for: indexPath)
         
         if let cell = cell as? CellType {
             configure(cell: cell, for: item(atIndex: indexPath.row))

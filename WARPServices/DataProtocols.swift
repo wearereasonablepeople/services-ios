@@ -41,7 +41,7 @@ public extension TableViewDataSource where Self: ItemsProviding {
 }
 
 public extension CellProviderType where Self: DataContaining, Self: CellHandlerType, Self.DataType: CellIdentifierProvider, Self.DataType.CellIdentifier == CellIdentifier {
-    public func identifier(for indexPath: NSIndexPath) -> CellIdentifier {
+    public func identifier(for indexPath: IndexPath) -> CellIdentifier {
         return data[indexPath.row].cellIdentifier
     }
 }
