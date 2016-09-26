@@ -27,7 +27,7 @@ public extension CellConfiguring where CellType: Configurable, CellType.DataType
 }
 
 public extension TableViewDataSource where Self: CellConfiguring, Self: ItemsProviding, Self.CellItemType == Self.ItemType {
-    public func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier(for: indexPath), for: indexPath)
         
         if let cell = cell as? CellType {
