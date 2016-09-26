@@ -9,9 +9,15 @@
 import XCTest
 import WARPServices
 
-struct StringSource: DataContaining, ItemsProviding{
+struct StringSource: DataContaining, ItemsProviding {
     typealias ItemType = String
     let data = ["Some", "test", "strings"]
+}
+
+extension StringSource: TableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
 }
 
 class TableViewProtocolsTests: XCTestCase {
@@ -22,5 +28,15 @@ class TableViewProtocolsTests: XCTestCase {
         for (index, element) in source.data.enumerated() {
             XCTAssertEqual(source.item(at: index), element)
         }
+    }
+    
+    func testItemsProvidingAndTableViewDataSourceExtension() {
+        let source = StringSource()
+        let tableView = UITableView()
+        
+        XCTAssertEqual(source.numberOfSections(in: tableView), 1)
+        XCTAssertEqual(source.tableView(tableView, numberOfRowsInSection: 0), source.data.count)
+        XCTAssertEqual(source.tableView(tableView, titleForFooterInSection: 0), nil)
+        XCTAssertEqual(source.tableView(tableView, titleForHeaderInSection: 0), nil)
     }
 }
