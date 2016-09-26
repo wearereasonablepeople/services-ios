@@ -31,7 +31,7 @@ public extension TableViewDataSource {
 }
 
 public class TableViewDataSourceProxy: NSObject, UITableViewDataSource {
-    weak var dataSource: (AnyObject & TableViewDataSource)?
+    public weak var dataSource: (AnyObject & TableViewDataSource)?
     
     public func numberOfSections(in tableView: UITableView) -> Int {
         return dataSource?.numberOfSections(in: tableView) ?? 0
