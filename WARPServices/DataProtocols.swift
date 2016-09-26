@@ -35,7 +35,7 @@ public extension ItemsProviding where Self: DataContaining, Self.DataType == Sel
 }
 
 public extension TableViewDataSource where Self: ItemsProviding {
-    public func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numberOfItems
     }
 }
