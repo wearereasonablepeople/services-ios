@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE46DE981D990E1F001D47D9 /* TableViewProxies.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE971D990E1F001D47D9 /* TableViewProxies.swift */; };
 		CE7BC99C1D48BB4C007D181B /* WARPServices.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7BC99B1D48BB4C007D181B /* WARPServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE7BC9A31D48BB4C007D181B /* WARPServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BC9981D48BB4C007D181B /* WARPServices.framework */; };
 		CE7BC9B31D48BC50007D181B /* SegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9B21D48BC50007D181B /* SegueHandler.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE46DE971D990E1F001D47D9 /* TableViewProxies.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewProxies.swift; sourceTree = "<group>"; };
 		CE7BC9981D48BB4C007D181B /* WARPServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WARPServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7BC99B1D48BB4C007D181B /* WARPServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WARPServices.h; sourceTree = "<group>"; };
 		CE7BC99D1D48BB4C007D181B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -52,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE46DE961D990D96001D47D9 /* TableView */ = {
+			isa = PBXGroup;
+			children = (
+				CE46DE971D990E1F001D47D9 /* TableViewProxies.swift */,
+			);
+			name = TableView;
+			sourceTree = "<group>";
+		};
 		CE7BC98E1D48BB4C007D181B = {
 			isa = PBXGroup;
 			children = (
@@ -76,6 +86,7 @@
 				CE7BC99B1D48BB4C007D181B /* WARPServices.h */,
 				CE7BC9B21D48BC50007D181B /* SegueHandler.swift */,
 				CE866F591D81896600B5A9DD /* ColorExtension.swift */,
+				CE46DE961D990D96001D47D9 /* TableView */,
 				CE7BC99D1D48BB4C007D181B /* Info.plist */,
 			);
 			path = WARPServices;
@@ -200,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE46DE981D990E1F001D47D9 /* TableViewProxies.swift in Sources */,
 				CE7BC9B31D48BC50007D181B /* SegueHandler.swift in Sources */,
 				CE866F5A1D81896600B5A9DD /* ColorExtension.swift in Sources */,
 			);
