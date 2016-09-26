@@ -16,3 +16,16 @@ public protocol TableViewDataSource {
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String?
 }
 
+public extension TableViewDataSource {
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return nil
+    }
+}
