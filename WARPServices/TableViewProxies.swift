@@ -33,7 +33,7 @@ public extension TableViewDataSource {
 public class TableViewDataSourceStrongProxy: NSObject, UITableViewDataSource {
     public var dataSource: TableViewDataSource
     
-    init(dataSource: TableViewDataSource) {
+    public init(dataSource: TableViewDataSource) {
         self.dataSource = dataSource
     }
     
