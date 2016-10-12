@@ -30,6 +30,34 @@ public extension TableViewDataSource {
     }
 }
 
+public class TableViewDataSourceStrongProxy: NSObject, UITableViewDataSource {
+    public var dataSource: TableViewDataSource
+    
+    init(dataSource: TableViewDataSource) {
+        self.dataSource = dataSource
+    }
+    
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return dataSource.numberOfSections(in: tableView)
+    }
+    
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return dataSource.tableView(tableView, numberOfRowsInSection: section)
+    }
+    
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return dataSource.tableView(tableView, cellForRowAt: indexPath)
+    }
+    
+    public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return dataSource.tableView(tableView, titleForHeaderInSection: section)
+    }
+    
+    public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        return dataSource.tableView(tableView, titleForFooterInSection: section)
+    }
+}
+
 public class TableViewDataSourceProxy: NSObject, UITableViewDataSource {
     public weak var dataSource: (AnyObject & TableViewDataSource)?
     
