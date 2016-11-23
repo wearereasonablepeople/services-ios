@@ -20,6 +20,10 @@ public protocol TableViewDataSourceProxyType {
     var dataSourceProxy: TableViewDataSourceProxy { get }
 }
 
+public protocol TableViewDelegateProxyType {
+    var delegateProxy: TableViewDelegateProxy { get }
+}
+
 public protocol CellHandlerType {
     associatedtype CellIdentifier: RawRepresentable
 }
@@ -33,6 +37,13 @@ public extension TableViewDataSourceProxyType where Self: TableViewType, Self: T
     public func setupTableViewDataSource() {
         dataSourceProxy.dataSource = self
         tableView.dataSource = dataSourceProxy
+    }
+}
+
+public extension TableViewDelegateProxyType where Self: TableViewType, Self: TableViewDelegate, Self: AnyObject {
+    public func setupTableViewDelegate() {
+        delegateProxy.delegate = self
+        tableView.delegate = delegateProxy
     }
 }
 
