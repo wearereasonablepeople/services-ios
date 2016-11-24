@@ -8,35 +8,35 @@
 
 import UIKit
 
-protocol NavigationCoordinator {
+public protocol NavigationCoordinator {
     var childCoordinators: [NavigationCoordinator] { get }
     func start()
 }
 
-protocol RootNavigationCoordinator: NavigationCoordinator {
+public protocol RootNavigationCoordinator: NavigationCoordinator {
     var window: UIWindow { get }
     
     init(window: UIWindow)
     func setup<T: UIViewController>(rootController: T)
 }
 
-protocol RootCoordinatorContainer: class {
+public protocol RootCoordinatorContainer: class {
     associatedtype CoordinatorType: RootNavigationCoordinator
     
     var window: UIWindow? { get set }
     var coordinator: CoordinatorType! { get set }
 }
 
-extension RootNavigationCoordinator {
-    func setup<T: UIViewController>(rootController: T) {
+public extension RootNavigationCoordinator {
+    public func setup<T: UIViewController>(rootController: T) {
         window.backgroundColor = .white
         window.rootViewController = rootController
         window.makeKeyAndVisible()
     }
 }
 
-extension RootCoordinatorContainer {
-    func setupCoordinator() {
+public extension RootCoordinatorContainer {
+    public func setupCoordinator() {
         let window = UIWindow(frame: UIScreen.main.bounds)
         
         self.window = window
