@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE0DD1F81DEC66A90095D591 /* SectionHeaderProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0DD1F71DEC66A90095D591 /* SectionHeaderProtocols.swift */; };
+		CE0DD1FA1DEC69960095D591 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0DD1F91DEC69960095D591 /* DateFormatterExtension.swift */; };
 		CE46DE981D990E1F001D47D9 /* TableViewDataSourceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE971D990E1F001D47D9 /* TableViewDataSourceProxy.swift */; };
 		CE46DE9A1D99429A001D47D9 /* DataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE991D99429A001D47D9 /* DataProtocols.swift */; };
 		CE46DE9C1D994428001D47D9 /* ConfiguringProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE9B1D994428001D47D9 /* ConfiguringProtocols.swift */; };
@@ -33,6 +34,7 @@
 
 /* Begin PBXFileReference section */
 		CE0DD1F71DEC66A90095D591 /* SectionHeaderProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderProtocols.swift; sourceTree = "<group>"; };
+		CE0DD1F91DEC69960095D591 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
 		CE46DE971D990E1F001D47D9 /* TableViewDataSourceProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceProxy.swift; sourceTree = "<group>"; };
 		CE46DE991D99429A001D47D9 /* DataProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProtocols.swift; sourceTree = "<group>"; };
 		CE46DE9B1D994428001D47D9 /* ConfiguringProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguringProtocols.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				CE7BC99B1D48BB4C007D181B /* WARPServices.h */,
 				CE7BC9B21D48BC50007D181B /* SegueHandler.swift */,
 				CE866F591D81896600B5A9DD /* ColorExtension.swift */,
+				CE0DD1F91DEC69960095D591 /* DateFormatterExtension.swift */,
 				CEF7ACAB1DE5EE3000D2F1EA /* NavigationCoordinator */,
 				CE46DE961D990D96001D47D9 /* TableView */,
 				CE7BC99D1D48BB4C007D181B /* Info.plist */,
@@ -241,6 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE46DE981D990E1F001D47D9 /* TableViewDataSourceProxy.swift in Sources */,
+				CE0DD1FA1DEC69960095D591 /* DateFormatterExtension.swift in Sources */,
 				CE46DE9A1D99429A001D47D9 /* DataProtocols.swift in Sources */,
 				CE0DD1F81DEC66A90095D591 /* SectionHeaderProtocols.swift in Sources */,
 				CEF7ACAD1DE5EEBD00D2F1EA /* NavigationCoordinator.swift in Sources */,
