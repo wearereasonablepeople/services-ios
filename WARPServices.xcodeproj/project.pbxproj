@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE0DD1F81DEC66A90095D591 /* SectionHeaderProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0DD1F71DEC66A90095D591 /* SectionHeaderProtocols.swift */; };
 		CE46DE981D990E1F001D47D9 /* TableViewDataSourceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE971D990E1F001D47D9 /* TableViewDataSourceProxy.swift */; };
 		CE46DE9A1D99429A001D47D9 /* DataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE991D99429A001D47D9 /* DataProtocols.swift */; };
 		CE46DE9C1D994428001D47D9 /* ConfiguringProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE9B1D994428001D47D9 /* ConfiguringProtocols.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE0DD1F71DEC66A90095D591 /* SectionHeaderProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderProtocols.swift; sourceTree = "<group>"; };
 		CE46DE971D990E1F001D47D9 /* TableViewDataSourceProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceProxy.swift; sourceTree = "<group>"; };
 		CE46DE991D99429A001D47D9 /* DataProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProtocols.swift; sourceTree = "<group>"; };
 		CE46DE9B1D994428001D47D9 /* ConfiguringProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguringProtocols.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				CE46DE9D1D994500001D47D9 /* TableViewProtocols.swift */,
 				CE46DE991D99429A001D47D9 /* DataProtocols.swift */,
 				CE46DE9B1D994428001D47D9 /* ConfiguringProtocols.swift */,
+				CE0DD1F71DEC66A90095D591 /* SectionHeaderProtocols.swift */,
 			);
 			name = TableView;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			files = (
 				CE46DE981D990E1F001D47D9 /* TableViewDataSourceProxy.swift in Sources */,
 				CE46DE9A1D99429A001D47D9 /* DataProtocols.swift in Sources */,
+				CE0DD1F81DEC66A90095D591 /* SectionHeaderProtocols.swift in Sources */,
 				CEF7ACAD1DE5EEBD00D2F1EA /* NavigationCoordinator.swift in Sources */,
 				CE46DE9C1D994428001D47D9 /* ConfiguringProtocols.swift in Sources */,
 				CE46DE9E1D994500001D47D9 /* TableViewProtocols.swift in Sources */,
