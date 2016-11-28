@@ -40,6 +40,16 @@ public extension TableViewDataSource where Self: ItemsProviding {
     }
 }
 
+public extension TableViewDataSource where Self: ItemsProviding, Self.ItemType: ItemsProviding {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return numberOfItems
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return item(at: section).numberOfItems
+    }
+}
+
 public extension CellProviderType where Self: DataContaining, Self: CellHandlerType, Self.DataType: CellIdentifierProvider, Self.DataType.CellIdentifier == CellIdentifier {
     public func identifier(for indexPath: IndexPath) -> CellIdentifier {
         return data[indexPath.row].cellIdentifier
