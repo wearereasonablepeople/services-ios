@@ -41,11 +41,11 @@ public extension TableViewDataSource where Self: ItemsProviding {
 }
 
 public extension TableViewDataSource where Self: ItemsProviding, Self.ItemType: ItemsProviding {
-    func numberOfSections(in tableView: UITableView) -> Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         return numberOfItems
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return item(at: section).numberOfItems
     }
 }
