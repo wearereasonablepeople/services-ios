@@ -37,3 +37,15 @@ public extension TableViewDataSource where Self: CellConfiguring, Self: ItemsPro
         return cell
     }
 }
+
+public extension TableViewDataSource where Self: CellConfiguring, Self: ItemsProviding, Self.ItemType: ItemsProviding, Self.CellItemType == Self.ItemType.ItemType {
+    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier(for: indexPath), for: indexPath)
+        
+        if let cell = cell as? CellType {
+            configure(cell: cell, for: item(at: indexPath.section).item(at: indexPath.row))
+        }
+        
+        return cell
+    }
+}
