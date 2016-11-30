@@ -9,8 +9,17 @@
 import UIKit
 
 public protocol NavigationCoordinator: class {
-    var childCoordinators: [NavigationCoordinator] { get }
+    var childCoordinators: [NavigationCoordinator] { get set }
     func start()
+    func remove<T: NavigationCoordinator>(child coordinator: T)
+}
+
+public extension NavigationCoordinator {
+    public func remove<T: NavigationCoordinator>(child coordinator: T) {
+        if let indexOfChild = childCoordinators.index(where: { $0 === coordinator }) {
+            childCoordinators.remove(at: indexOfChild)
+        }
+    }
 }
 
 public protocol RootNavigationCoordinator: NavigationCoordinator {
