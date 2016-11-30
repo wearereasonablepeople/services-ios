@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol NavigationCoordinator {
+public protocol NavigationCoordinator: class {
     var childCoordinators: [NavigationCoordinator] { get }
     func start()
 }
