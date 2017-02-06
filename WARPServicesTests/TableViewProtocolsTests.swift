@@ -54,17 +54,11 @@ class TableViewProtocolsTests: XCTestCase {
     }
     
     func testItemsProvidingAndTableViewDataSourceExtension() {
-        let source = SourceProvider()
-        let dataSourceProxy = TableViewDataSourceProxy()
+        let dataSourceProxy = TableViewDataSourceProxy(dataSource: SourceProvider())
         let tableView = UITableView()
         
-        XCTAssertEqual(dataSourceProxy.numberOfSections(in: tableView), 0)
-        XCTAssertEqual(dataSourceProxy.tableView(tableView, numberOfRowsInSection: 0), 0)
-        
-        dataSourceProxy.dataSource = source
-        
         XCTAssertEqual(dataSourceProxy.numberOfSections(in: tableView), 1)
-        XCTAssertEqual(dataSourceProxy.tableView(tableView, numberOfRowsInSection: 0), source.data.count)
+        XCTAssertEqual(dataSourceProxy.tableView(tableView, numberOfRowsInSection: 0), dataSourceProxy.dataSource.data.count)
         XCTAssertEqual(dataSourceProxy.tableView(tableView, titleForFooterInSection: 0), nil)
         XCTAssertEqual(dataSourceProxy.tableView(tableView, titleForHeaderInSection: 0), nil)
     }

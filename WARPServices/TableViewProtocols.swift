@@ -9,19 +9,8 @@
 import UIKit
 
 // MARK: - TableView Protocols
-
-public protocol TableViewControllerType: TableViewType, TableViewDataSourceProxyType, TableViewDataSource, ItemsProviding, CellConfiguring {}
-
 public protocol TableViewType {
     var tableView: UITableView! { get set }
-}
-
-public protocol TableViewDataSourceProxyType {
-    var dataSourceProxy: TableViewDataSourceProxy { get }
-}
-
-public protocol TableViewDelegateProxyType {
-    var delegateProxy: TableViewDelegateProxy { get }
 }
 
 public protocol CellHandlerType {
@@ -30,21 +19,6 @@ public protocol CellHandlerType {
 
 public protocol CellProviderType: CellHandlerType, CellConfiguring {
     func identifier(for indexPath: IndexPath) -> CellIdentifier
-}
-
-// MARK: - Extensions
-public extension TableViewDataSourceProxyType where Self: TableViewType, Self: TableViewDataSource, Self: AnyObject {
-    public func setupTableViewDataSource() {
-        dataSourceProxy.dataSource = self
-        tableView.dataSource = dataSourceProxy
-    }
-}
-
-public extension TableViewDelegateProxyType where Self: TableViewType, Self: TableViewDelegate, Self: AnyObject {
-    public func setupTableViewDelegate() {
-        delegateProxy.delegate = self
-        tableView.delegate = delegateProxy
-    }
 }
 
 public extension CellProviderType where Self.CellIdentifier.RawValue == String {
