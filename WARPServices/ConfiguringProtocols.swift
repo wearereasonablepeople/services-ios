@@ -29,10 +29,9 @@ public extension CellConfiguring where CellType: Configurable, CellType.DataType
 public extension TableViewDataSource where Self: CellConfiguring, Self: ItemsProviding, Self.CellItemType == Self.ItemType {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier(for: indexPath), for: indexPath)
+        guard let customCell = cell as? CellType else { fatalError("Cell for of different type") }
         
-        if let cell = cell as? CellType {
-            configure(cell: cell, for: item(at: indexPath.row))
-        }
+        configure(cell: customCell, for: item(at: indexPath.row))
         
         return cell
     }
@@ -41,10 +40,9 @@ public extension TableViewDataSource where Self: CellConfiguring, Self: ItemsPro
 public extension TableViewDataSource where Self: CellConfiguring, Self: ItemsProviding, Self.ItemType: ItemsProviding, Self.CellItemType == Self.ItemType.ItemType {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier(for: indexPath), for: indexPath)
+        guard let customCell = cell as? CellType else { fatalError("Cell for of different type") }
         
-        if let cell = cell as? CellType {
-            configure(cell: cell, for: item(at: indexPath.section).item(at: indexPath.row))
-        }
+        configure(cell: customCell, for: item(at: indexPath.section).item(at: indexPath.row))
         
         return cell
     }
