@@ -47,3 +47,25 @@ public extension TableViewDataSource where Self: CellConfiguring, Self: ItemsPro
         return cell
     }
 }
+
+public extension CollectionViewDataSource where Self: CellConfiguring, Self: ItemsProviding, Self.CellItemType == Self.ItemType {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier(for: indexPath), for: indexPath)
+        guard let customCell = cell as? CellType else { fatalError("Cell for of different type") }
+        
+        configure(cell: customCell, for: item(at: indexPath.row))
+        
+        return cell
+    }
+}
+
+public extension CollectionViewDataSource where Self: CellConfiguring, Self: ItemsProviding, Self.ItemType: ItemsProviding, Self.CellItemType == Self.ItemType.ItemType {
+    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier(for: indexPath), for: indexPath)
+        guard let customCell = cell as? CellType else { fatalError("Cell for of different type") }
+        
+        configure(cell: customCell, for: item(at: indexPath.section).item(at: indexPath.row))
+        
+        return cell
+    }
+}
