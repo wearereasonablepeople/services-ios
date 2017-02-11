@@ -50,6 +50,22 @@ public extension TableViewDataSource where Self: ItemsProviding, Self.ItemType: 
     }
 }
 
+public extension CollectionViewDataSource where Self: ItemsProviding {
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return numberOfItems
+    }
+}
+
+public extension CollectionViewDataSource where Self: ItemsProviding, Self.ItemType: ItemsProviding {
+    public func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return numberOfItems
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return item(at: section).numberOfItems
+    }
+}
+
 public extension CellProviderType where Self: DataContaining, Self: CellHandlerType, Self.DataType: CellIdentifierProvider, Self.DataType.CellIdentifier == CellIdentifier {
     public func identifier(for indexPath: IndexPath) -> CellIdentifier {
         return data[indexPath.row].cellIdentifier

@@ -30,7 +30,7 @@ public extension TableViewDataSource {
     }
 }
 
-public class TableViewDataSourceProxy<T: TableViewDataSource>: NSObject, UITableViewDataSource {
+public final class TableViewDataSourceProxy<T: TableViewDataSource>: NSObject, UITableViewDataSource {
     public var dataSource: T
     
     public init(dataSource: T) {
