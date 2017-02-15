@@ -20,6 +20,7 @@
 		CE82742E1E4F6ACE001A00D1 /* CollectionViewDataSourceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82742D1E4F6ACE001A00D1 /* CollectionViewDataSourceProxy.swift */; };
 		CE866F5A1D81896600B5A9DD /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE866F591D81896600B5A9DD /* ColorExtension.swift */; };
 		CED1CF6F1E54958A007E493F /* PickerViewDataSourceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1CF6E1E54958A007E493F /* PickerViewDataSourceProxy.swift */; };
+		CED1CF711E5496E9007E493F /* PickerViewDataSourceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1CF701E5496E9007E493F /* PickerViewDataSourceExtensions.swift */; };
 		CEF7ACAD1DE5EEBD00D2F1EA /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7ACAC1DE5EEBD00D2F1EA /* NavigationCoordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		CE82742D1E4F6ACE001A00D1 /* CollectionViewDataSourceProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSourceProxy.swift; sourceTree = "<group>"; };
 		CE866F591D81896600B5A9DD /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		CED1CF6E1E54958A007E493F /* PickerViewDataSourceProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewDataSourceProxy.swift; sourceTree = "<group>"; };
+		CED1CF701E5496E9007E493F /* PickerViewDataSourceExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewDataSourceExtensions.swift; sourceTree = "<group>"; };
 		CEF7ACAC1DE5EEBD00D2F1EA /* NavigationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				CED1CF6E1E54958A007E493F /* PickerViewDataSourceProxy.swift */,
+				CED1CF701E5496E9007E493F /* PickerViewDataSourceExtensions.swift */,
 			);
 			name = PickerView;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 				CED1CF6F1E54958A007E493F /* PickerViewDataSourceProxy.swift in Sources */,
 				CE7BC9B31D48BC50007D181B /* SegueHandler.swift in Sources */,
 				CE866F5A1D81896600B5A9DD /* ColorExtension.swift in Sources */,
+				CED1CF711E5496E9007E493F /* PickerViewDataSourceExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
