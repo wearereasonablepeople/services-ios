@@ -24,6 +24,13 @@ public protocol CellIdentifierProvider {
     var cellIdentifier: CellIdentifier { get }
 }
 
+extension Array: ItemsProviding {
+    public var numberOfItems: Int { return count }
+    public func item(at index: Int) -> Element {
+        return self[index]
+    }
+}
+
 public extension ItemsProviding where Self: DataContaining, Self.DataType == Self.ItemType {
     public var numberOfItems: Int {
         return data.count
