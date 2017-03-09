@@ -22,6 +22,7 @@
 		CED1CF711E5496E9007E493F /* PickerViewDataSourceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1CF701E5496E9007E493F /* PickerViewDataSourceExtensions.swift */; };
 		CEE756C81E71932900F825CD /* IndexPathSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE756C71E71932900F825CD /* IndexPathSet.swift */; };
 		CEE756CA1E71980400F825CD /* IndexPathSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE756C91E71980400F825CD /* IndexPathSetTests.swift */; };
+		CEE756CC1E71A6CF00F825CD /* TableViewUpdate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE756CB1E71A6CF00F825CD /* TableViewUpdate.swift */; };
 		CEF7ACAD1DE5EEBD00D2F1EA /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7ACAC1DE5EEBD00D2F1EA /* NavigationCoordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,7 @@
 		CED1CF701E5496E9007E493F /* PickerViewDataSourceExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewDataSourceExtensions.swift; sourceTree = "<group>"; };
 		CEE756C71E71932900F825CD /* IndexPathSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexPathSet.swift; sourceTree = "<group>"; };
 		CEE756C91E71980400F825CD /* IndexPathSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexPathSetTests.swift; sourceTree = "<group>"; };
+		CEE756CB1E71A6CF00F825CD /* TableViewUpdate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewUpdate.swift; sourceTree = "<group>"; };
 		CEF7ACAC1DE5EEBD00D2F1EA /* NavigationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				CEE756C71E71932900F825CD /* IndexPathSet.swift */,
+				CEE756CB1E71A6CF00F825CD /* TableViewUpdate.swift */,
 			);
 			name = IndexPathSet;
 			sourceTree = "<group>";
@@ -279,6 +282,7 @@
 				CE46DE9E1D994500001D47D9 /* TableViewProtocols.swift in Sources */,
 				CED1CF6F1E54958A007E493F /* PickerViewDataSourceProxy.swift in Sources */,
 				CE7BC9B31D48BC50007D181B /* SegueHandler.swift in Sources */,
+				CEE756CC1E71A6CF00F825CD /* TableViewUpdate.swift in Sources */,
 				CED1CF711E5496E9007E493F /* PickerViewDataSourceExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
