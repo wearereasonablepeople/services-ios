@@ -21,6 +21,8 @@
 		CE866F5A1D81896600B5A9DD /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE866F591D81896600B5A9DD /* ColorExtension.swift */; };
 		CED1CF6F1E54958A007E493F /* PickerViewDataSourceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1CF6E1E54958A007E493F /* PickerViewDataSourceProxy.swift */; };
 		CED1CF711E5496E9007E493F /* PickerViewDataSourceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1CF701E5496E9007E493F /* PickerViewDataSourceExtensions.swift */; };
+		CEE756C81E71932900F825CD /* IndexPathSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE756C71E71932900F825CD /* IndexPathSet.swift */; };
+		CEE756CA1E71980400F825CD /* IndexPathSetTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE756C91E71980400F825CD /* IndexPathSetTests.swift */; };
 		CEF7ACAD1DE5EEBD00D2F1EA /* NavigationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEF7ACAC1DE5EEBD00D2F1EA /* NavigationCoordinator.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,8 @@
 		CE866F591D81896600B5A9DD /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		CED1CF6E1E54958A007E493F /* PickerViewDataSourceProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewDataSourceProxy.swift; sourceTree = "<group>"; };
 		CED1CF701E5496E9007E493F /* PickerViewDataSourceExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewDataSourceExtensions.swift; sourceTree = "<group>"; };
+		CEE756C71E71932900F825CD /* IndexPathSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexPathSet.swift; sourceTree = "<group>"; };
+		CEE756C91E71980400F825CD /* IndexPathSetTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexPathSetTests.swift; sourceTree = "<group>"; };
 		CEF7ACAC1DE5EEBD00D2F1EA /* NavigationCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationCoordinator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -112,6 +116,7 @@
 				CE7BC9B21D48BC50007D181B /* SegueHandler.swift */,
 				CE866F591D81896600B5A9DD /* ColorExtension.swift */,
 				CE0DD1F91DEC69960095D591 /* DateFormatterExtension.swift */,
+				CEE756C61E71931800F825CD /* IndexPathSet */,
 				CEF7ACAB1DE5EE3000D2F1EA /* NavigationCoordinator */,
 				CE46DE961D990D96001D47D9 /* TableView */,
 				CED1CF6D1E54956F007E493F /* PickerView */,
@@ -125,6 +130,7 @@
 			children = (
 				CE7BC9A91D48BB4C007D181B /* Info.plist */,
 				CE46DE9F1D994C19001D47D9 /* TableViewProtocolsTests.swift */,
+				CEE756C91E71980400F825CD /* IndexPathSetTests.swift */,
 			);
 			path = WARPServicesTests;
 			sourceTree = "<group>";
@@ -136,6 +142,14 @@
 				CED1CF701E5496E9007E493F /* PickerViewDataSourceExtensions.swift */,
 			);
 			name = PickerView;
+			sourceTree = "<group>";
+		};
+		CEE756C61E71931800F825CD /* IndexPathSet */ = {
+			isa = PBXGroup;
+			children = (
+				CEE756C71E71932900F825CD /* IndexPathSet.swift */,
+			);
+			name = IndexPathSet;
 			sourceTree = "<group>";
 		};
 		CEF7ACAB1DE5EE3000D2F1EA /* NavigationCoordinator */ = {
@@ -262,6 +276,7 @@
 				CE82742E1E4F6ACE001A00D1 /* CollectionViewDataSourceProxy.swift in Sources */,
 				CE46DE9A1D99429A001D47D9 /* DataProtocols.swift in Sources */,
 				CE0DD1F81DEC66A90095D591 /* SectionHeaderProtocols.swift in Sources */,
+				CEE756C81E71932900F825CD /* IndexPathSet.swift in Sources */,
 				CEF7ACAD1DE5EEBD00D2F1EA /* NavigationCoordinator.swift in Sources */,
 				CE46DE9C1D994428001D47D9 /* ConfiguringProtocols.swift in Sources */,
 				CE46DE9E1D994500001D47D9 /* TableViewProtocols.swift in Sources */,
@@ -276,6 +291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEE756CA1E71980400F825CD /* IndexPathSetTests.swift in Sources */,
 				CE46DEA01D994C19001D47D9 /* TableViewProtocolsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
