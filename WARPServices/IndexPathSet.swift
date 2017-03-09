@@ -25,8 +25,18 @@ public struct IndexPathSet {
     }
 }
 
-extension IndexPathSet: Equatable {
+extension IndexPathSet: Hashable {
     public static func == (lhs: IndexPathSet, rhs: IndexPathSet) -> Bool {
         return lhs.deleted == rhs.deleted && lhs.inserted == rhs.inserted && lhs.updated == rhs.updated
+    }
+    
+    public var hashValue: Int {
+        var hash = 5381
+        
+        hash = ((hash << 5) &+ hash) &+ deleted.hashValue
+        hash = ((hash << 5) &+ hash) &+ inserted.hashValue
+        hash = ((hash << 5) &+ hash) &+ updated.hashValue
+        
+        return hash
     }
 }

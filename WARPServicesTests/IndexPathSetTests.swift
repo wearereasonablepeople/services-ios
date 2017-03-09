@@ -18,8 +18,10 @@ class IndexPathSetTests: XCTestCase {
         XCTAssertEqual(set.updated, [IndexPath(row: 2, section: 0), IndexPath(row: 3, section: 0)])
     }
     
-    func testIndexPathSetEquatable() {
+    func testIndexPathSetHashable() {
         XCTAssertEqual(set, IndexPathSet(deleted: [0], inserted: [1], updated: [2, 3]))
+        XCTAssertEqual(set.hashValue, IndexPathSet(deleted: [0], inserted: [1], updated: [2, 3]).hashValue)
+        XCTAssertNotEqual(IndexPathSet(deleted: [0], inserted: [1], updated: [0]).hashValue, IndexPathSet(deleted: [2], inserted: [1], updated: [2]).hashValue)
     }
     
 }
