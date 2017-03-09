@@ -18,7 +18,6 @@
 		CE7BC9A31D48BB4C007D181B /* WARPServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BC9981D48BB4C007D181B /* WARPServices.framework */; };
 		CE7BC9B31D48BC50007D181B /* SegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9B21D48BC50007D181B /* SegueHandler.swift */; };
 		CE82742E1E4F6ACE001A00D1 /* CollectionViewDataSourceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82742D1E4F6ACE001A00D1 /* CollectionViewDataSourceProxy.swift */; };
-		CE866F5A1D81896600B5A9DD /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE866F591D81896600B5A9DD /* ColorExtension.swift */; };
 		CED1CF6F1E54958A007E493F /* PickerViewDataSourceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1CF6E1E54958A007E493F /* PickerViewDataSourceProxy.swift */; };
 		CED1CF711E5496E9007E493F /* PickerViewDataSourceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1CF701E5496E9007E493F /* PickerViewDataSourceExtensions.swift */; };
 		CEE756C81E71932900F825CD /* IndexPathSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE756C71E71932900F825CD /* IndexPathSet.swift */; };
@@ -51,7 +50,6 @@
 		CE7BC9A91D48BB4C007D181B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE7BC9B21D48BC50007D181B /* SegueHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandler.swift; sourceTree = "<group>"; };
 		CE82742D1E4F6ACE001A00D1 /* CollectionViewDataSourceProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSourceProxy.swift; sourceTree = "<group>"; };
-		CE866F591D81896600B5A9DD /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		CED1CF6E1E54958A007E493F /* PickerViewDataSourceProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewDataSourceProxy.swift; sourceTree = "<group>"; };
 		CED1CF701E5496E9007E493F /* PickerViewDataSourceExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewDataSourceExtensions.swift; sourceTree = "<group>"; };
 		CEE756C71E71932900F825CD /* IndexPathSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IndexPathSet.swift; sourceTree = "<group>"; };
@@ -114,7 +112,6 @@
 			children = (
 				CE7BC99B1D48BB4C007D181B /* WARPServices.h */,
 				CE7BC9B21D48BC50007D181B /* SegueHandler.swift */,
-				CE866F591D81896600B5A9DD /* ColorExtension.swift */,
 				CE0DD1F91DEC69960095D591 /* DateFormatterExtension.swift */,
 				CEE756C61E71931800F825CD /* IndexPathSet */,
 				CEF7ACAB1DE5EE3000D2F1EA /* NavigationCoordinator */,
@@ -282,7 +279,6 @@
 				CE46DE9E1D994500001D47D9 /* TableViewProtocols.swift in Sources */,
 				CED1CF6F1E54958A007E493F /* PickerViewDataSourceProxy.swift in Sources */,
 				CE7BC9B31D48BC50007D181B /* SegueHandler.swift in Sources */,
-				CE866F5A1D81896600B5A9DD /* ColorExtension.swift in Sources */,
 				CED1CF711E5496E9007E493F /* PickerViewDataSourceExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
