@@ -10,13 +10,16 @@ import XCTest
 import WARPServices
 
 class IndexPathSetTests: XCTestCase {
+    let set = IndexPathSet(deleted: [0], inserted: [1], updated: [2, 3])
     
     func testIndexPathSetInit() {
-        let set = IndexPathSet(deleted: [0], inserted: [1], updated: [2, 3])
-        
         XCTAssertEqual(set.deleted, [IndexPath(row: 0, section: 0)])
         XCTAssertEqual(set.inserted, [IndexPath(row: 1, section: 0)])
         XCTAssertEqual(set.updated, [IndexPath(row: 2, section: 0), IndexPath(row: 3, section: 0)])
+    }
+    
+    func testIndexPathSetEquatable() {
+        XCTAssertEqual(set, IndexPathSet(deleted: [0], inserted: [1], updated: [2, 3]))
     }
     
 }

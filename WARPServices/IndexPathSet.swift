@@ -24,3 +24,9 @@ public struct IndexPathSet {
         self.init(deleted: toIndexPath(deleted), inserted: toIndexPath(inserted), updated: toIndexPath(updated))
     }
 }
+
+extension IndexPathSet: Equatable {
+    public static func == (lhs: IndexPathSet, rhs: IndexPathSet) -> Bool {
+        return lhs.deleted == rhs.deleted && lhs.inserted == rhs.inserted && lhs.updated == rhs.updated
+    }
+}
