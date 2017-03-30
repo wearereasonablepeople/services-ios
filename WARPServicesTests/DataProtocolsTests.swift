@@ -23,4 +23,11 @@ class DataProtocolsTests: XCTestCase {
         XCTAssertEqual(data.item(at: 3), data.items?[3])
     }
     
+    func testArrayItemsProviding() {
+        let data = [1, 2, 3, 4, 5, 6]
+        
+        XCTAssertEqual(data.numberOfItems, data.count)
+        XCTAssertEqual(data.item(at: 3), data[3])
+    }
+    
 }
