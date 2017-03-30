@@ -8,6 +8,11 @@
 
 import UIKit
 
+public protocol CollectionContaining {
+    associatedtype CollectionType: RandomAccessCollection
+    var items: CollectionType? { get }
+}
+
 public protocol DataContaining {
     associatedtype DataType
     var data: [Self.DataType] { get }
@@ -40,6 +45,17 @@ public extension ItemsProviding where Self: DataContaining, Self.DataType == Sel
         return data[index]
     }
 }
+
+public extension ItemsProviding where Self: CollectionContaining, Self.CollectionType.Iterator.Element == Self.ItemType, Self.CollectionType.IndexDistance == Int, Self.CollectionType.Index == Int {
+        public var numberOfItems: Int {
+            return items?.count ?? 0
+        }
+        
+        public func item(at index: Int) -> ItemType {
+            return items![index]
+        }
+    }
+
 
 public extension TableViewDataSource where Self: ItemsProviding {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
