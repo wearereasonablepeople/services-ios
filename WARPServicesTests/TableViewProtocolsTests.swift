@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import UIKit
 import WARPServices
 
 class SourceProvider: DataContaining, ItemsProviding {
@@ -74,5 +75,22 @@ class TableViewProtocolsTests: XCTestCase {
             }
             _ = source.tableView(tableView, cellForRowAt: indexPath)
         }
+    }
+    
+    func testTableViewNestedDataSource() {
+        struct DataSource: DataContaining, ItemsProviding, TableViewDataSource, CellConfiguring {
+            typealias ItemType = [Int]
+            let data = [[1, 2, 3], [1, 2, 3]]
+            
+            func identifier(for indexPath: IndexPath) -> String { return String() }
+            func configure(cell: UITableViewCell, for item: Int) {}
+        }
+        
+        let dataSource = DataSource()
+        let tableView = UITableView()
+        
+        XCTAssertEqual(dataSource.numberOfSections(in: tableView), dataSource.data.count)
+        XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 0), dataSource.data[0].count)
+        XCTAssertEqual(dataSource.tableView(tableView, numberOfRowsInSection: 1), dataSource.data[1].count)
     }
 }
