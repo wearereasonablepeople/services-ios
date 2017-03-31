@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CE0DD1F81DEC66A90095D591 /* SectionHeaderProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0DD1F71DEC66A90095D591 /* SectionHeaderProtocols.swift */; };
 		CE0DD1FA1DEC69960095D591 /* DateFormatterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0DD1F91DEC69960095D591 /* DateFormatterExtension.swift */; };
+		CE14F2FD1E8E4231007C2A33 /* DateFormatterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE14F2FC1E8E4231007C2A33 /* DateFormatterTests.swift */; };
+		CE14F2FF1E8E4425007C2A33 /* TableViewSectionHeaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE14F2FE1E8E4425007C2A33 /* TableViewSectionHeaderTests.swift */; };
 		CE46DE981D990E1F001D47D9 /* TableViewDataSourceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE971D990E1F001D47D9 /* TableViewDataSourceProxy.swift */; };
 		CE46DE9A1D99429A001D47D9 /* DataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE991D99429A001D47D9 /* DataProtocols.swift */; };
 		CE46DE9C1D994428001D47D9 /* ConfiguringProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE9B1D994428001D47D9 /* ConfiguringProtocols.swift */; };
@@ -40,6 +42,8 @@
 /* Begin PBXFileReference section */
 		CE0DD1F71DEC66A90095D591 /* SectionHeaderProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SectionHeaderProtocols.swift; sourceTree = "<group>"; };
 		CE0DD1F91DEC69960095D591 /* DateFormatterExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatterExtension.swift; sourceTree = "<group>"; };
+		CE14F2FC1E8E4231007C2A33 /* DateFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatterTests.swift; sourceTree = "<group>"; };
+		CE14F2FE1E8E4425007C2A33 /* TableViewSectionHeaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSectionHeaderTests.swift; sourceTree = "<group>"; };
 		CE46DE971D990E1F001D47D9 /* TableViewDataSourceProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceProxy.swift; sourceTree = "<group>"; };
 		CE46DE991D99429A001D47D9 /* DataProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProtocols.swift; sourceTree = "<group>"; };
 		CE46DE9B1D994428001D47D9 /* ConfiguringProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguringProtocols.swift; sourceTree = "<group>"; };
@@ -131,8 +135,10 @@
 			children = (
 				CE7BC9A91D48BB4C007D181B /* Info.plist */,
 				CE46DE9F1D994C19001D47D9 /* TableViewProtocolsTests.swift */,
+				CE14F2FE1E8E4425007C2A33 /* TableViewSectionHeaderTests.swift */,
 				CE6AF0E01E8D448F00148EB7 /* DataProtocolsTests.swift */,
 				CEE756C91E71980400F825CD /* IndexPathSetTests.swift */,
+				CE14F2FC1E8E4231007C2A33 /* DateFormatterTests.swift */,
 			);
 			path = WARPServicesTests;
 			sourceTree = "<group>";
@@ -294,7 +300,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE14F2FD1E8E4231007C2A33 /* DateFormatterTests.swift in Sources */,
 				CE6AF0E11E8D448F00148EB7 /* DataProtocolsTests.swift in Sources */,
+				CE14F2FF1E8E4425007C2A33 /* TableViewSectionHeaderTests.swift in Sources */,
 				CEE756CA1E71980400F825CD /* IndexPathSetTests.swift in Sources */,
 				CE46DEA01D994C19001D47D9 /* TableViewProtocolsTests.swift in Sources */,
 			);
