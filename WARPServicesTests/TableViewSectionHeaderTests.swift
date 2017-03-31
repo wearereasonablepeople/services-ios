@@ -20,7 +20,7 @@ class TableViewSectionHeaderTests: XCTestCase {
             let data = [1, 2, 3]
             
             func identifier(for indexPath: IndexPath) -> String { return String() }
-            func configure(cell: UITableViewCell, for item: Int) {}
+            func configure(item: CellItem<Int, UITableViewCell>) {}
         }
         
         let dataSource = DataSource()
@@ -39,7 +39,7 @@ class TableViewSectionHeaderTests: XCTestCase {
             let data = [ItemType(), ItemType(), ItemType()]
             
             func identifier(for indexPath: IndexPath) -> String { return String() }
-            func configure(cell: UITableViewCell, for item: ItemType) {}
+            func configure(item: CellItem<ItemType, UITableViewCell>) {}
         }
         
         let dataSource = DataSource()

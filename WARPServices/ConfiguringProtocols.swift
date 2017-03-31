@@ -16,13 +16,13 @@ public protocol Configurable {
 public protocol CellConfiguring {
     associatedtype CellItemType
     associatedtype CellType
-    func configure(cell: CellType, for item: CellItemType)
+    func configure(item: CellItem<CellItemType, CellType>)
     func identifier(for indexPath: IndexPath) -> String
 }
 
 public extension CellConfiguring where CellType: Configurable, CellType.DataType == CellItemType {
-    public func configure(cell: CellType, for item: CellItemType) {
-        cell.configure(with: item)
+    public func configure(item: CellItem<CellItemType, CellType>) {
+        item.configure()
     }
 }
 
@@ -31,7 +31,7 @@ public extension TableViewDataSource where Self: CellConfiguring, Self: ItemsPro
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier(for: indexPath), for: indexPath)
         guard let customCell = cell as? CellType else { fatalError("Cell for of different type") }
         
-        configure(cell: customCell, for: item(at: indexPath.row))
+        configure(item: CellItem(item: item(at: indexPath.row), cell: customCell, at: indexPath))
         
         return cell
     }
@@ -42,7 +42,7 @@ public extension TableViewDataSource where Self: CellConfiguring, Self: ItemsPro
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier(for: indexPath), for: indexPath)
         guard let customCell = cell as? CellType else { fatalError("Cell for of different type") }
         
-        configure(cell: customCell, for: item(at: indexPath.section).item(at: indexPath.row))
+        configure(item: CellItem(item: item(at: indexPath.section).item(at: indexPath.row), cell: customCell, at: indexPath))
         
         return cell
     }
@@ -53,7 +53,7 @@ public extension CollectionViewDataSource where Self: CellConfiguring, Self: Ite
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier(for: indexPath), for: indexPath)
         guard let customCell = cell as? CellType else { fatalError("Cell for of different type") }
         
-        configure(cell: customCell, for: item(at: indexPath.row))
+        configure(item: CellItem(item: item(at: indexPath.row), cell: customCell, at: indexPath))
         
         return cell
     }
@@ -64,7 +64,7 @@ public extension CollectionViewDataSource where Self: CellConfiguring, Self: Ite
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier(for: indexPath), for: indexPath)
         guard let customCell = cell as? CellType else { fatalError("Cell for of different type") }
         
-        configure(cell: customCell, for: item(at: indexPath.section).item(at: indexPath.row))
+        configure(item: CellItem(item: item(at: indexPath.section).item(at: indexPath.row), cell: customCell, at: indexPath))
         
         return cell
     }
