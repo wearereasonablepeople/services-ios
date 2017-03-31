@@ -8,7 +8,7 @@
 
 import UIKit
 
-public struct CellItem<T, C: UITableViewCell> {
+public struct CellItem<T, C> {
     public let cell: C
     public let item: T
     public let indexPath: IndexPath
@@ -24,7 +24,7 @@ public struct CellItem<T, C: UITableViewCell> {
     }
 }
 
-extension CellItem where T: Equatable {
+extension CellItem where T: Equatable, C: Equatable {
     public static func == (lhs: CellItem, rhs: CellItem) -> Bool {
         return lhs.cell == rhs.cell && lhs.item == rhs.item && lhs.indexPath == rhs.indexPath
     }
