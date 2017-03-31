@@ -28,8 +28,8 @@ extension SourceProvider: CellProviderType, TableViewDataSource {
         case test, some
     }
     
-    func configure(cell: UITableViewCell, for item: SourceItem) {
-        sourceValidationCallback?(item)
+    func configure(item: CellItem<SourceItem, UITableViewCell>) {
+        sourceValidationCallback?(item.item)
     }
 }
 
@@ -83,7 +83,7 @@ class TableViewProtocolsTests: XCTestCase {
             let data = [[1, 2, 3], [1, 2, 3]]
             
             func identifier(for indexPath: IndexPath) -> String { return String() }
-            func configure(cell: UITableViewCell, for item: Int) {}
+            func configure(item: CellItem<Int, UITableViewCell>) {}
         }
         
         let dataSource = DataSource()
