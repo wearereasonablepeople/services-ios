@@ -24,8 +24,14 @@ public struct CellItem<T, C> {
     }
 }
 
-extension CellItem where T: Equatable, C: Equatable {
+public extension CellItem where T: Equatable, C: Equatable {
     public static func == (lhs: CellItem, rhs: CellItem) -> Bool {
         return lhs.cell == rhs.cell && lhs.item == rhs.item && lhs.indexPath == rhs.indexPath
+    }
+}
+
+public extension CellItem where C: Configurable, C.DataType == T {
+    public func configure() {
+        cell.configure(with: item)
     }
 }

@@ -25,4 +25,17 @@ class CellItemTests: XCTestCase {
         XCTAssertTrue(cellItem.map(String.init) == CellItem(item: "3", cell: cell, at: indexPath))
     }
     
+    func testCellItemConfigure() {
+        class ConfigurableItem: Configurable {
+            var string: String?
+            
+            func configure(with data: String) {
+                string = data
+            }
+        }
+        let cell = ConfigurableItem()
+        CellItem(item: "testString", cell: cell, at: indexPath).configure()
+        XCTAssertEqual(cell.string, "testString")
+    }
+    
 }
