@@ -19,6 +19,10 @@ class ColorExtensionTests: XCTestCase {
      * Maximum: 0xFFFFFFFF
      */
     
+    func testLowercaseHexString() {
+        XCTAssertEqual(try? UIColor(rgba_throws: "#ff0000"), #colorLiteral(red: 1, green: 0, blue: 0, alpha: 1))
+    }
+    
     // MARK: - Three-digit
     func testThreeDigitMin() {
         let (red, green, blue, alpha) = UIColor(hex3: 0x000).rgba()
