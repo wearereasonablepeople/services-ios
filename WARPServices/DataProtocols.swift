@@ -9,8 +9,8 @@
 import UIKit
 
 public protocol DataContaining {
-    associatedtype DataType
-    var data: [Self.DataType] { get }
+    associatedtype CollectionType: RandomAccessCollection
+    var data: CollectionType { get }
 }
 
 public protocol ItemsProviding {
@@ -31,7 +31,7 @@ extension Array: ItemsProviding {
     }
 }
 
-public extension ItemsProviding where Self: DataContaining, Self.DataType == Self.ItemType {
+public extension ItemsProviding where Self: DataContaining, Self.CollectionType.Iterator.Element == Self.ItemType, Self.CollectionType.IndexDistance == Int, Self.CollectionType.Index == Int {
     public var numberOfItems: Int {
         return data.count
     }
@@ -73,7 +73,7 @@ public extension CollectionViewDataSource where Self: ItemsProviding, Self.ItemT
     }
 }
 
-public extension CellProviderType where Self: DataContaining, Self: CellHandlerType, Self.DataType: CellIdentifierProvider, Self.DataType.CellIdentifier == CellIdentifier {
+public extension CellProviderType where Self: DataContaining, Self: CellHandlerType, Self.CollectionType.Iterator.Element: CellIdentifierProvider, Self.CollectionType.Iterator.Element.CellIdentifier == CellIdentifier, Self.CollectionType.IndexDistance == Int, Self.CollectionType.Index == Int {
     public func identifier(for indexPath: IndexPath) -> CellIdentifier {
         return data[indexPath.row].cellIdentifier
     }
