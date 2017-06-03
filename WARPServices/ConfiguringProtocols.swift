@@ -26,7 +26,7 @@ public extension CellConfiguring where CellType: Configurable, CellType.DataType
     }
 }
 
-public extension TableViewDataSource where Self: CellConfiguring, Self: DataContaining, Self.CellItemType == Self.Element {
+public extension TableViewDataSourceType where Self: CellConfiguring, Self: DataContaining, Self.CellItemType == Self.Element {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier(for: indexPath), for: indexPath)
         guard let customCell = cell as? CellType else { fatalError("Cell for of different type") }

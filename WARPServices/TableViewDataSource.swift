@@ -8,7 +8,7 @@
 
 import UIKit
 
-public protocol TableViewDataSource {
+public protocol TableViewDataSourceType {
     func numberOfSections(in tableView: UITableView) -> Int
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -16,7 +16,7 @@ public protocol TableViewDataSource {
     func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String?
 }
 
-public extension TableViewDataSource {
+public extension TableViewDataSourceType {
     public func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -30,7 +30,7 @@ public extension TableViewDataSource {
     }
 }
 
-public final class TableViewDataSourceProxy<T: TableViewDataSource>: NSObject, UITableViewDataSource {
+public final class TableViewDataSource<T: TableViewDataSourceType>: NSObject, UITableViewDataSource {
     public var dataSource: T
     
     public init(dataSource: T) {

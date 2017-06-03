@@ -21,7 +21,7 @@ class SourceProvider: DataContaining {
     let data: [SourceItem] = [SourceItem(value: "Some", cellIdentifier: .some), SourceItem(value: "test", cellIdentifier: .test), SourceItem(value: "strings", cellIdentifier: .test)]
 }
 
-extension SourceProvider: CellProviderType, TableViewDataSource {
+extension SourceProvider: CellProviderType, TableViewDataSourceType {
     typealias CellType = UITableViewCell
     typealias CellItemType = SourceItem
     enum CellIdentifier: String {
@@ -46,7 +46,7 @@ class MockTableView: UITableView {
 
 class TableViewProtocolsTests: XCTestCase {
     func testItemsProvidingAndTableViewDataSourceExtension() {
-        let dataSourceProxy = TableViewDataSourceProxy(dataSource: SourceProvider())
+        let dataSourceProxy = TableViewDataSource(dataSource: SourceProvider())
         let tableView = UITableView()
         
         XCTAssertEqual(dataSourceProxy.numberOfSections(in: tableView), 1)
@@ -69,7 +69,7 @@ class TableViewProtocolsTests: XCTestCase {
     }
     
     func testTableViewNestedDataSource() {
-        struct DataSource: DataContaining, TableViewDataSource, CellConfiguring {
+        struct DataSource: DataContaining, TableViewDataSourceType, CellConfiguring {
             typealias ItemType = [Int]
             let data = [[1, 2, 3], [1, 2, 3]]
             

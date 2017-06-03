@@ -36,13 +36,13 @@ public extension DataContaining where Self.CollectionType.IndexDistance == Int, 
     }
 }
 
-public extension TableViewDataSource where Self: DataContaining, Self.CollectionType.IndexDistance == Int, Self.CollectionType.Index == Int {
+public extension TableViewDataSourceType where Self: DataContaining, Self.CollectionType.IndexDistance == Int, Self.CollectionType.Index == Int {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return data.count
     }
 }
 
-public extension TableViewDataSource where Self: DataContaining, Self.CollectionType.IndexDistance == Int, Self.CollectionType.Index == Int, Self.CollectionType.Iterator.Element: DataContaining, Self.CollectionType.Iterator.Element.CollectionType.IndexDistance == Int, Self.CollectionType.Iterator.Element.CollectionType.Index == Int {
+public extension TableViewDataSourceType where Self: DataContaining, Self.CollectionType.IndexDistance == Int, Self.CollectionType.Index == Int, Self.CollectionType.Iterator.Element: DataContaining, Self.CollectionType.Iterator.Element.CollectionType.IndexDistance == Int, Self.CollectionType.Iterator.Element.CollectionType.Index == Int {
     public func numberOfSections(in tableView: UITableView) -> Int {
         return data.count
     }

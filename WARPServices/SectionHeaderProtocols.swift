@@ -24,13 +24,13 @@ public extension FooterTitleProvider {
     public var footerTitle: String? { return nil }
 }
 
-public extension TableViewDataSource where Self: DataContaining, Self.CollectionType.IndexDistance == Int, Self.CollectionType.Index == Int, Self.CollectionType.Iterator.Element: HeaderTitleProvider {
+public extension TableViewDataSourceType where Self: DataContaining, Self.CollectionType.IndexDistance == Int, Self.CollectionType.Index == Int, Self.CollectionType.Iterator.Element: HeaderTitleProvider {
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return data[section].headerTitle
     }
 }
 
-public extension TableViewDataSource where Self: DataContaining, Self.CollectionType.IndexDistance == Int, Self.CollectionType.Index == Int, Self.CollectionType.Iterator.Element: FooterTitleProvider {
+public extension TableViewDataSourceType where Self: DataContaining, Self.CollectionType.IndexDistance == Int, Self.CollectionType.Index == Int, Self.CollectionType.Iterator.Element: FooterTitleProvider {
     public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         return data[section].footerTitle
     }
