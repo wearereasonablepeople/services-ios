@@ -9,10 +9,6 @@
 import UIKit
 
 // MARK: - TableView Protocols
-public protocol TableViewType {
-    var tableView: UITableView! { get set }
-}
-
 public protocol CellHandlerType {
     associatedtype CellIdentifier: RawRepresentable
 }
