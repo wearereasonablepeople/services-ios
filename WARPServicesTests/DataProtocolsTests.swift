@@ -15,7 +15,8 @@ class DataProtocolsTests: XCTestCase {
         let data = [1, 2, 3, 4, 5, 6]
         
         XCTAssertEqual(data.data.count, data.count)
-        XCTAssertEqual(data.data[3], data[3])
+        XCTAssertEqual(data.item(at: IndexPath(row: 3, section: 0)), data[3])
+        XCTAssertEqual([[1], [1, 2, 3, 4]].item(at: IndexPath(row: 3, section: 1)), 4)
     }
     
 }
