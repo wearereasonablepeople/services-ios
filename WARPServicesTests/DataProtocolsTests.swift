@@ -11,23 +11,12 @@ import WARPServices
 
 class DataProtocolsTests: XCTestCase {
     
-    func testCollectionContainingProtocol() {
-        struct TestProvider: CollectionContaining, ItemsProviding {
-            typealias ItemType = Int
-            let items: [Int]?
-        }
-        let data = TestProvider(items: [1, 2, 3, 4])
-        
-        XCTAssertEqual(data.numberOfItems, data.items?.count)
-        XCTAssertEqual(TestProvider(items: nil).numberOfItems, 0)
-        XCTAssertEqual(data.item(at: 3), data.items?[3])
-    }
-    
     func testArrayItemsProviding() {
         let data = [1, 2, 3, 4, 5, 6]
         
-        XCTAssertEqual(data.numberOfItems, data.count)
-        XCTAssertEqual(data.item(at: 3), data[3])
+        XCTAssertEqual(data.data.count, data.count)
+        XCTAssertEqual(data.item(at: IndexPath(row: 3, section: 0)), data[3])
+        XCTAssertEqual([[1], [1, 2, 3, 4]].item(at: IndexPath(row: 3, section: 1)), 4)
     }
     
 }

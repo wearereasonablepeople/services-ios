@@ -13,7 +13,7 @@
 		CE14F2FF1E8E4425007C2A33 /* TableViewSectionHeaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE14F2FE1E8E4425007C2A33 /* TableViewSectionHeaderTests.swift */; };
 		CE14F3011E8E5DAF007C2A33 /* CellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE14F3001E8E5DAF007C2A33 /* CellItem.swift */; };
 		CE14F3051E8E5F1C007C2A33 /* CellItemTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE14F3041E8E5F1C007C2A33 /* CellItemTests.swift */; };
-		CE46DE981D990E1F001D47D9 /* TableViewDataSourceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE971D990E1F001D47D9 /* TableViewDataSourceProxy.swift */; };
+		CE46DE981D990E1F001D47D9 /* TableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE971D990E1F001D47D9 /* TableViewDataSource.swift */; };
 		CE46DE9A1D99429A001D47D9 /* DataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE991D99429A001D47D9 /* DataProtocols.swift */; };
 		CE46DE9C1D994428001D47D9 /* ConfiguringProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE9B1D994428001D47D9 /* ConfiguringProtocols.swift */; };
 		CE46DE9E1D994500001D47D9 /* TableViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE9D1D994500001D47D9 /* TableViewProtocols.swift */; };
@@ -50,7 +50,7 @@
 		CE14F2FE1E8E4425007C2A33 /* TableViewSectionHeaderTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewSectionHeaderTests.swift; sourceTree = "<group>"; };
 		CE14F3001E8E5DAF007C2A33 /* CellItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellItem.swift; sourceTree = "<group>"; };
 		CE14F3041E8E5F1C007C2A33 /* CellItemTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellItemTests.swift; sourceTree = "<group>"; };
-		CE46DE971D990E1F001D47D9 /* TableViewDataSourceProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSourceProxy.swift; sourceTree = "<group>"; };
+		CE46DE971D990E1F001D47D9 /* TableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewDataSource.swift; sourceTree = "<group>"; };
 		CE46DE991D99429A001D47D9 /* DataProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProtocols.swift; sourceTree = "<group>"; };
 		CE46DE9B1D994428001D47D9 /* ConfiguringProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguringProtocols.swift; sourceTree = "<group>"; };
 		CE46DE9D1D994500001D47D9 /* TableViewProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewProtocols.swift; sourceTree = "<group>"; };
@@ -95,7 +95,7 @@
 		CE46DE961D990D96001D47D9 /* TableView */ = {
 			isa = PBXGroup;
 			children = (
-				CE46DE971D990E1F001D47D9 /* TableViewDataSourceProxy.swift */,
+				CE46DE971D990E1F001D47D9 /* TableViewDataSource.swift */,
 				CE46DE9D1D994500001D47D9 /* TableViewProtocols.swift */,
 				CE82742D1E4F6ACE001A00D1 /* CollectionViewDataSourceProxy.swift */,
 				CE46DE991D99429A001D47D9 /* DataProtocols.swift */,
@@ -292,7 +292,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE46DE981D990E1F001D47D9 /* TableViewDataSourceProxy.swift in Sources */,
+				CE46DE981D990E1F001D47D9 /* TableViewDataSource.swift in Sources */,
 				CE0DD1FA1DEC69960095D591 /* DateFormatterExtension.swift in Sources */,
 				CE82742E1E4F6ACE001A00D1 /* CollectionViewDataSourceProxy.swift in Sources */,
 				CE46DE9A1D99429A001D47D9 /* DataProtocols.swift in Sources */,

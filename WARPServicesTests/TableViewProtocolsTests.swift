@@ -10,7 +10,7 @@ import XCTest
 import UIKit
 import WARPServices
 
-class SourceProvider: DataContaining, ItemsProviding {
+class SourceProvider: DataContaining {
     struct SourceItem: CellIdentifierProvider {
         let value: String
         let cellIdentifier: SourceProvider.CellIdentifier
@@ -21,7 +21,7 @@ class SourceProvider: DataContaining, ItemsProviding {
     let data: [SourceItem] = [SourceItem(value: "Some", cellIdentifier: .some), SourceItem(value: "test", cellIdentifier: .test), SourceItem(value: "strings", cellIdentifier: .test)]
 }
 
-extension SourceProvider: CellProviderType, TableViewDataSource {
+extension SourceProvider: CellProviderType, TableViewDataSourceType {
     typealias CellType = UITableViewCell
     typealias CellItemType = SourceItem
     enum CellIdentifier: String {
@@ -45,21 +45,12 @@ class MockTableView: UITableView {
 }
 
 class TableViewProtocolsTests: XCTestCase {
-    func testDataContainingAndItemsProvidingExtension() {
-        let source = SourceProvider()
-        
-        XCTAssertEqual(source.numberOfItems, source.data.count)
-        for (index, element) in source.data.enumerated() {
-            XCTAssertEqual(source.item(at: index), element)
-        }
-    }
-    
     func testItemsProvidingAndTableViewDataSourceExtension() {
-        let dataSourceProxy = TableViewDataSourceProxy(dataSource: SourceProvider())
+        let dataSourceProxy = TableViewDataSource(SourceProvider())
         let tableView = UITableView()
         
         XCTAssertEqual(dataSourceProxy.numberOfSections(in: tableView), 1)
-        XCTAssertEqual(dataSourceProxy.tableView(tableView, numberOfRowsInSection: 0), dataSourceProxy.dataSource.data.count)
+        XCTAssertEqual(dataSourceProxy.tableView(tableView, numberOfRowsInSection: 0), dataSourceProxy.item.data.count)
         XCTAssertEqual(dataSourceProxy.tableView(tableView, titleForFooterInSection: 0), nil)
         XCTAssertEqual(dataSourceProxy.tableView(tableView, titleForHeaderInSection: 0), nil)
     }
@@ -78,7 +69,7 @@ class TableViewProtocolsTests: XCTestCase {
     }
     
     func testTableViewNestedDataSource() {
-        struct DataSource: DataContaining, ItemsProviding, TableViewDataSource, CellConfiguring {
+        struct DataSource: DataContaining, TableViewDataSourceType, CellConfiguring {
             typealias ItemType = [Int]
             let data = [[1, 2, 3], [1, 2, 3]]
             

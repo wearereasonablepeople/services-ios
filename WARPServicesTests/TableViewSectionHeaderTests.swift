@@ -15,8 +15,7 @@ class TableViewSectionHeaderTests: XCTestCase {
     let tableView = UITableView()
     
     func testSectionHeaderFooterDefaultValeus() {
-        struct DataSource: DataContaining, ItemsProviding, TableViewDataSource, CellConfiguring {
-            typealias ItemType = Int
+        struct DataSource: DataContaining, TableViewDataSourceType, CellConfiguring {
             let data = [1, 2, 3]
             
             func identifier(for indexPath: IndexPath) -> String { return String() }
@@ -30,7 +29,7 @@ class TableViewSectionHeaderTests: XCTestCase {
     
     
     func testSectionHeaderFooterRealValues() {
-        struct DataSource: DataContaining, ItemsProviding, TableViewDataSource, CellConfiguring {
+        struct DataSource: DataContaining, TableViewDataSourceType, CellConfiguring {
             struct ItemType: HeaderTitleProvider, FooterTitleProvider {
                 let headerTitle: String? = "header"
                 let footerTitle: String? = "footer"
