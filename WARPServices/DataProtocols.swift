@@ -25,13 +25,13 @@ extension Array: DataContaining {
 }
 
 public extension DataContaining where Self.CollectionType.IndexDistance == Int, Self.CollectionType.Index == Int {
-    func item(at indexPath: IndexPath) -> CollectionType.Iterator.Element {
+    public func item(at indexPath: IndexPath) -> CollectionType.Iterator.Element {
         return data[indexPath.row]
     }
 }
 
 public extension DataContaining where Self.CollectionType.IndexDistance == Int, Self.CollectionType.Index == Int, Self.CollectionType.Iterator.Element: DataContaining, Self.CollectionType.Iterator.Element.CollectionType.IndexDistance == Int, Self.CollectionType.Iterator.Element.CollectionType.Index == Int {
-    func item(at indexPath: IndexPath) -> Self.CollectionType.Iterator.Element.CollectionType.Iterator.Element {
+    public func item(at indexPath: IndexPath) -> Self.CollectionType.Iterator.Element.CollectionType.Iterator.Element {
         return data[indexPath.section].data[indexPath.row]
     }
 }
