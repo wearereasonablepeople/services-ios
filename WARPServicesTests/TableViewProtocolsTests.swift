@@ -46,11 +46,11 @@ class MockTableView: UITableView {
 
 class TableViewProtocolsTests: XCTestCase {
     func testItemsProvidingAndTableViewDataSourceExtension() {
-        let dataSourceProxy = TableViewDataSource(dataSource: SourceProvider())
+        let dataSourceProxy = TableViewDataSource(SourceProvider())
         let tableView = UITableView()
         
         XCTAssertEqual(dataSourceProxy.numberOfSections(in: tableView), 1)
-        XCTAssertEqual(dataSourceProxy.tableView(tableView, numberOfRowsInSection: 0), dataSourceProxy.dataSource.data.count)
+        XCTAssertEqual(dataSourceProxy.tableView(tableView, numberOfRowsInSection: 0), dataSourceProxy.item.data.count)
         XCTAssertEqual(dataSourceProxy.tableView(tableView, titleForFooterInSection: 0), nil)
         XCTAssertEqual(dataSourceProxy.tableView(tableView, titleForHeaderInSection: 0), nil)
     }

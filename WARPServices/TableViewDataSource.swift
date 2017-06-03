@@ -31,29 +31,29 @@ public extension TableViewDataSourceType {
 }
 
 public final class TableViewDataSource<T: TableViewDataSourceType>: NSObject, UITableViewDataSource {
-    public var dataSource: T
+    public var item: T
     
-    public init(dataSource: T) {
-        self.dataSource = dataSource
+    public init(_ item: T) {
+        self.item = item
     }
     
     public func numberOfSections(in tableView: UITableView) -> Int {
-        return dataSource.numberOfSections(in: tableView)
+        return item.numberOfSections(in: tableView)
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataSource.tableView(tableView, numberOfRowsInSection: section)
+        return item.tableView(tableView, numberOfRowsInSection: section)
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return dataSource.tableView(tableView, cellForRowAt: indexPath)
+        return item.tableView(tableView, cellForRowAt: indexPath)
     }
     
     public func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return dataSource.tableView(tableView, titleForHeaderInSection: section)
+        return item.tableView(tableView, titleForHeaderInSection: section)
     }
     
     public func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
-        return dataSource.tableView(tableView, titleForFooterInSection: section)
+        return item.tableView(tableView, titleForFooterInSection: section)
     }
 }
