@@ -13,63 +13,44 @@ public protocol DataContaining {
     var data: CollectionType { get }
 }
 
-public protocol ItemsProviding {
-    associatedtype ItemType
-    var numberOfItems: Int { get }
-    func item(at index: Int) -> ItemType
-}
-
 public protocol CellIdentifierProvider {
     associatedtype CellIdentifier
     var cellIdentifier: CellIdentifier { get }
 }
 
-extension Array: ItemsProviding {
-    public var numberOfItems: Int { return count }
-    public func item(at index: Int) -> Element {
-        return self[index]
+extension Array: DataContaining {
+    public var data: [Element] { return self }
+}
+
+public extension TableViewDataSource where Self: DataContaining, Self.CollectionType.IndexDistance == Int, Self.CollectionType.Index == Int {
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
     }
 }
 
-public extension ItemsProviding where Self: DataContaining, Self.CollectionType.Iterator.Element == Self.ItemType, Self.CollectionType.IndexDistance == Int, Self.CollectionType.Index == Int {
-    public var numberOfItems: Int {
+public extension TableViewDataSource where Self: DataContaining, Self.CollectionType.IndexDistance == Int, Self.CollectionType.Index == Int, Self.CollectionType.Iterator.Element: DataContaining, Self.CollectionType.Iterator.Element.CollectionType.IndexDistance == Int, Self.CollectionType.Iterator.Element.CollectionType.Index == Int {
+    public func numberOfSections(in tableView: UITableView) -> Int {
         return data.count
     }
     
-    public func item(at index: Int) -> ItemType {
-        return data[index]
-    }
-}
-
-public extension TableViewDataSource where Self: ItemsProviding {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfItems
+        return data[section].data.count
     }
 }
 
-public extension TableViewDataSource where Self: ItemsProviding, Self.ItemType: ItemsProviding {
-    public func numberOfSections(in tableView: UITableView) -> Int {
-        return numberOfItems
-    }
-    
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return item(at: section).numberOfItems
-    }
-}
-
-public extension CollectionViewDataSource where Self: ItemsProviding {
+public extension CollectionViewDataSource where Self: DataContaining, Self.CollectionType.IndexDistance == Int, Self.CollectionType.Index == Int {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return numberOfItems
+        return data.count
     }
 }
 
-public extension CollectionViewDataSource where Self: ItemsProviding, Self.ItemType: ItemsProviding {
+public extension CollectionViewDataSource where Self: DataContaining, Self.CollectionType.IndexDistance == Int, Self.CollectionType.Index == Int, Self.CollectionType.Iterator.Element: DataContaining, Self.CollectionType.Iterator.Element.CollectionType.IndexDistance == Int, Self.CollectionType.Iterator.Element.CollectionType.Index == Int {
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return numberOfItems
+        return data.count
     }
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return item(at: section).numberOfItems
+        return data[section].data.count
     }
 }
 
