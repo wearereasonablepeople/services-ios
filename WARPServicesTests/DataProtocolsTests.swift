@@ -14,8 +14,8 @@ class DataProtocolsTests: XCTestCase {
     func testArrayItemsProviding() {
         let data = [1, 2, 3, 4, 5, 6]
         
-        XCTAssertEqual(data.numberOfItems, data.count)
-        XCTAssertEqual(data.item(at: 3), data[3])
+        XCTAssertEqual(data.data.count, data.count)
+        XCTAssertEqual(data.data[3], data[3])
     }
     
 }

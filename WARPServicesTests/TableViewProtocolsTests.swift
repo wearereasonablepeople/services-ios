@@ -10,7 +10,7 @@ import XCTest
 import UIKit
 import WARPServices
 
-class SourceProvider: DataContaining, ItemsProviding {
+class SourceProvider: DataContaining {
     struct SourceItem: CellIdentifierProvider {
         let value: String
         let cellIdentifier: SourceProvider.CellIdentifier
@@ -45,15 +45,6 @@ class MockTableView: UITableView {
 }
 
 class TableViewProtocolsTests: XCTestCase {
-    func testDataContainingAndItemsProvidingExtension() {
-        let source = SourceProvider()
-        
-        XCTAssertEqual(source.numberOfItems, source.data.count)
-        for (index, element) in source.data.enumerated() {
-            XCTAssertEqual(source.item(at: index), element)
-        }
-    }
-    
     func testItemsProvidingAndTableViewDataSourceExtension() {
         let dataSourceProxy = TableViewDataSourceProxy(dataSource: SourceProvider())
         let tableView = UITableView()
@@ -78,7 +69,7 @@ class TableViewProtocolsTests: XCTestCase {
     }
     
     func testTableViewNestedDataSource() {
-        struct DataSource: DataContaining, ItemsProviding, TableViewDataSource, CellConfiguring {
+        struct DataSource: DataContaining, TableViewDataSource, CellConfiguring {
             typealias ItemType = [Int]
             let data = [[1, 2, 3], [1, 2, 3]]
             
