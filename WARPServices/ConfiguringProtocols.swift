@@ -26,45 +26,23 @@ public extension CellConfiguring where CellType: Configurable, CellType.DataType
     }
 }
 
-public extension TableViewDataSource where Self: CellConfiguring, Self: ItemsProviding, Self.CellItemType == Self.ItemType {
+public extension TableViewDataSource where Self: CellConfiguring, Self: DataContaining, Self.CellItemType == Self.Element {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier(for: indexPath), for: indexPath)
         guard let customCell = cell as? CellType else { fatalError("Cell for of different type") }
         
-        configure(item: CellItem(item: item(at: indexPath.row), cell: customCell, at: indexPath))
+        configure(item: CellItem(item: item(at: indexPath), cell: customCell, at: indexPath))
         
         return cell
     }
 }
 
-public extension TableViewDataSource where Self: CellConfiguring, Self: ItemsProviding, Self.ItemType: ItemsProviding, Self.CellItemType == Self.ItemType.ItemType {
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier(for: indexPath), for: indexPath)
-        guard let customCell = cell as? CellType else { fatalError("Cell for of different type") }
-        
-        configure(item: CellItem(item: item(at: indexPath.section).item(at: indexPath.row), cell: customCell, at: indexPath))
-        
-        return cell
-    }
-}
-
-public extension CollectionViewDataSource where Self: CellConfiguring, Self: ItemsProviding, Self.CellItemType == Self.ItemType {
+public extension CollectionViewDataSource where Self: CellConfiguring, Self: DataContaining, Self.CellItemType == Self.Element {
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier(for: indexPath), for: indexPath)
         guard let customCell = cell as? CellType else { fatalError("Cell for of different type") }
         
-        configure(item: CellItem(item: item(at: indexPath.row), cell: customCell, at: indexPath))
-        
-        return cell
-    }
-}
-
-public extension CollectionViewDataSource where Self: CellConfiguring, Self: ItemsProviding, Self.ItemType: ItemsProviding, Self.CellItemType == Self.ItemType.ItemType {
-    public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier(for: indexPath), for: indexPath)
-        guard let customCell = cell as? CellType else { fatalError("Cell for of different type") }
-        
-        configure(item: CellItem(item: item(at: indexPath.section).item(at: indexPath.row), cell: customCell, at: indexPath))
+        configure(item: CellItem(item: item(at: indexPath), cell: customCell, at: indexPath))
         
         return cell
     }
