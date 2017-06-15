@@ -19,4 +19,16 @@ class DataProtocolsTests: XCTestCase {
         XCTAssertEqual([[1], [1, 2, 3, 4]].item(at: IndexPath(row: 3, section: 1)), 4)
     }
     
+    
+    func testAnyRandomAccessCollection() {
+        struct ViewModel: DataContaining {
+            let data = AnyRandomAccessCollection([1, 2, 3, 4, 5, 6])
+        }
+        
+        let viewModel = ViewModel()
+        
+        XCTAssertEqual(Int(viewModel.data.count), viewModel.numberOfElements)
+        XCTAssertEqual(viewModel.item(at: IndexPath(row: 3, section: 0)), viewModel.data[AnyIndex(3)])
+        XCTAssertEqual([[1], [1, 2, 3, 4]].item(at: IndexPath(row: 3, section: 1)), 4)
+    }
 }
