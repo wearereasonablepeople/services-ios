@@ -8,13 +8,18 @@
 
 import UIKit
 
-public protocol DataContaining {
-    associatedtype CollectionType: RandomAccessCollection
+public protocol ItemsProviding {
     associatedtype Element
-    var data: CollectionType { get }
+    associatedtype DataType
     var numberOfElements: Int { get }
-    func item(at index: Int) -> CollectionType.Iterator.Element
+    func item(at index: Int) -> DataType
     func item(at indexPath: IndexPath) -> Element
+}
+
+public protocol DataContaining: ItemsProviding {
+    associatedtype CollectionType: RandomAccessCollection
+    var data: CollectionType { get }
+    func item(at index: Int) -> CollectionType.Iterator.Element
 }
 
 public protocol CellIdentifierProvider {
@@ -56,19 +61,19 @@ public extension DataContaining where Self.CollectionType.Index == AnyIndex {
     }
 }
 
-public extension DataContaining where Self: DataContaining, Self.CollectionType.Iterator.Element: DataContaining {
+public extension DataContaining where Self.CollectionType.Iterator.Element: DataContaining {
     public func item(at indexPath: IndexPath) -> Self.CollectionType.Iterator.Element.CollectionType.Iterator.Element {
         return item(at: indexPath.section).item(at: indexPath.row)
     }
 }
 
-public extension TableViewDataSourceType where Self: DataContaining {
+public extension TableViewDataSourceType where Self: ItemsProviding {
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return numberOfElements
     }
 }
 
-public extension TableViewDataSourceType where Self: DataContaining, Self.CollectionType.Iterator.Element: DataContaining {
+public extension TableViewDataSourceType where Self: ItemsProviding, Self.DataType: DataContaining {
     public func numberOfSections(in tableView: UITableView) -> Int {
         return numberOfElements
     }
@@ -78,13 +83,13 @@ public extension TableViewDataSourceType where Self: DataContaining, Self.Collec
     }
 }
 
-public extension CollectionViewDataSourceType where Self: DataContaining {
+public extension CollectionViewDataSourceType where Self: ItemsProviding {
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return numberOfElements
     }
 }
 
-public extension CollectionViewDataSourceType where Self: DataContaining, Self.CollectionType.Iterator.Element: DataContaining {
+public extension CollectionViewDataSourceType where Self: ItemsProviding, Self.DataType: DataContaining {
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return numberOfElements
     }
@@ -94,7 +99,7 @@ public extension CollectionViewDataSourceType where Self: DataContaining, Self.C
     }
 }
 
-public extension CellProviderType where Self: DataContaining, Self: CellHandlerType, Self.CollectionType.Iterator.Element: CellIdentifierProvider, Self.CollectionType.Iterator.Element.CellIdentifier == CellIdentifier {
+public extension CellProviderType where Self: ItemsProviding, Self: CellHandlerType, Self.DataType: CellIdentifierProvider, Self.DataType.CellIdentifier == CellIdentifier {
     public func identifier(for indexPath: IndexPath) -> CellIdentifier {
         return item(at: indexPath.section).cellIdentifier
     }
