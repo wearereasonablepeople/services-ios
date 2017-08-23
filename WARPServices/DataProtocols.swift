@@ -61,8 +61,8 @@ public extension DataContaining where Self.CollectionType.Index == AnyIndex {
     }
 }
 
-public extension DataContaining where Self.CollectionType.Iterator.Element: DataContaining {
-    public func item(at indexPath: IndexPath) -> Self.CollectionType.Iterator.Element.CollectionType.Iterator.Element {
+public extension DataContaining where Self.CollectionType.Iterator.Element: ItemsProviding {
+    public func item(at indexPath: IndexPath) -> Self.CollectionType.Iterator.Element.DataType {
         return item(at: indexPath.section).item(at: indexPath.row)
     }
 }
@@ -89,7 +89,7 @@ public extension CollectionViewDataSourceType where Self: ItemsProviding {
     }
 }
 
-public extension CollectionViewDataSourceType where Self: ItemsProviding, Self.DataType: DataContaining {
+public extension CollectionViewDataSourceType where Self: ItemsProviding, Self.DataType: ItemsProviding {
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return numberOfElements
     }

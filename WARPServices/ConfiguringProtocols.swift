@@ -26,7 +26,7 @@ public extension CellConfiguring where CellType: Configurable, CellType.DataType
     }
 }
 
-public extension TableViewDataSourceType where Self: CellConfiguring, Self: DataContaining, Self.CellItemType == Self.Element {
+public extension TableViewDataSourceType where Self: CellConfiguring, Self: ItemsProviding, Self.CellItemType == Self.Element {
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier(for: indexPath), for: indexPath)
         guard let customCell = cell as? CellType else { fatalError("Cell for of different type") }
@@ -37,7 +37,7 @@ public extension TableViewDataSourceType where Self: CellConfiguring, Self: Data
     }
 }
 
-public extension CollectionViewDataSourceType where Self: CellConfiguring, Self: DataContaining, Self.CellItemType == Self.Element {
+public extension CollectionViewDataSourceType where Self: CellConfiguring, Self: ItemsProviding, Self.CellItemType == Self.Element {
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier(for: indexPath), for: indexPath)
         guard let customCell = cell as? CellType else { fatalError("Cell for of different type") }
