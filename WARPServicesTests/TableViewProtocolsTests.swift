@@ -22,8 +22,6 @@ private class SourceProvider: DataContaining {
 }
 
 extension SourceProvider: CellProviderType, TableViewDataSourceType {
-    typealias CellType = UITableViewCell
-    typealias CellItemType = SourceItem
     enum CellIdentifier: String {
         case test, some
     }
