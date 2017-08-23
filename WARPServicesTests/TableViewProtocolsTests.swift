@@ -10,7 +10,7 @@ import XCTest
 import UIKit
 import WARPServices
 
-class SourceProvider: DataContaining {
+private class SourceProvider: DataContaining {
     struct SourceItem: CellIdentifierProvider {
         let value: String
         let cellIdentifier: SourceProvider.CellIdentifier
@@ -34,11 +34,11 @@ extension SourceProvider: CellProviderType, TableViewDataSourceType {
 }
 
 extension SourceProvider.SourceItem: Equatable {}
-func == (lhs: SourceProvider.SourceItem, rhs: SourceProvider.SourceItem) -> Bool {
+private func == (lhs: SourceProvider.SourceItem, rhs: SourceProvider.SourceItem) -> Bool {
     return lhs.value == rhs.value && lhs.cellIdentifier == rhs.cellIdentifier
 }
 
-class MockTableView: UITableView {
+private class MockTableView: UITableView {
     override func dequeueReusableCell(withIdentifier identifier: String, for indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell()
     }
