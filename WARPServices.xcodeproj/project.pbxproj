@@ -23,6 +23,7 @@
 		CE7BC9A31D48BB4C007D181B /* WARPServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BC9981D48BB4C007D181B /* WARPServices.framework */; };
 		CE7BC9B31D48BC50007D181B /* SegueHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7BC9B21D48BC50007D181B /* SegueHandler.swift */; };
 		CE82742E1E4F6ACE001A00D1 /* CollectionViewDataSourceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE82742D1E4F6ACE001A00D1 /* CollectionViewDataSourceProxy.swift */; };
+		CEAB9D7C1F4DD81400D5EE47 /* CollectionViewProtocolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB9D7B1F4DD81400D5EE47 /* CollectionViewProtocolsTests.swift */; };
 		CED1CF6F1E54958A007E493F /* PickerViewDataSourceProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1CF6E1E54958A007E493F /* PickerViewDataSourceProxy.swift */; };
 		CED1CF711E5496E9007E493F /* PickerViewDataSourceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED1CF701E5496E9007E493F /* PickerViewDataSourceExtensions.swift */; };
 		CEE468621EA6577300FB0CAF /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE468611EA6577300FB0CAF /* ColorExtension.swift */; };
@@ -63,6 +64,7 @@
 		CE7BC9A91D48BB4C007D181B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE7BC9B21D48BC50007D181B /* SegueHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SegueHandler.swift; sourceTree = "<group>"; };
 		CE82742D1E4F6ACE001A00D1 /* CollectionViewDataSourceProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewDataSourceProxy.swift; sourceTree = "<group>"; };
+		CEAB9D7B1F4DD81400D5EE47 /* CollectionViewProtocolsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewProtocolsTests.swift; sourceTree = "<group>"; };
 		CED1CF6E1E54958A007E493F /* PickerViewDataSourceProxy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewDataSourceProxy.swift; sourceTree = "<group>"; };
 		CED1CF701E5496E9007E493F /* PickerViewDataSourceExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewDataSourceExtensions.swift; sourceTree = "<group>"; };
 		CEE468611EA6577300FB0CAF /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
@@ -145,6 +147,7 @@
 			children = (
 				CE7BC9A91D48BB4C007D181B /* Info.plist */,
 				CE46DE9F1D994C19001D47D9 /* TableViewProtocolsTests.swift */,
+				CEAB9D7B1F4DD81400D5EE47 /* CollectionViewProtocolsTests.swift */,
 				CE14F2FE1E8E4425007C2A33 /* TableViewSectionHeaderTests.swift */,
 				CE6AF0E01E8D448F00148EB7 /* DataProtocolsTests.swift */,
 				CEE756C91E71980400F825CD /* IndexPathSetTests.swift */,
@@ -318,6 +321,7 @@
 				CE14F2FD1E8E4231007C2A33 /* DateFormatterTests.swift in Sources */,
 				CE6AF0E11E8D448F00148EB7 /* DataProtocolsTests.swift in Sources */,
 				CE14F2FF1E8E4425007C2A33 /* TableViewSectionHeaderTests.swift in Sources */,
+				CEAB9D7C1F4DD81400D5EE47 /* CollectionViewProtocolsTests.swift in Sources */,
 				CEE468661EA657F600FB0CAF /* ColorExtensionTests.swift in Sources */,
 				CEE756CA1E71980400F825CD /* IndexPathSetTests.swift in Sources */,
 				CE46DEA01D994C19001D47D9 /* TableViewProtocolsTests.swift in Sources */,
