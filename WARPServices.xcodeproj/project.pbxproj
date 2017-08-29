@@ -18,6 +18,7 @@
 		CE46DE9C1D994428001D47D9 /* ConfiguringProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE9B1D994428001D47D9 /* ConfiguringProtocols.swift */; };
 		CE46DE9E1D994500001D47D9 /* TableViewProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE9D1D994500001D47D9 /* TableViewProtocols.swift */; };
 		CE46DEA01D994C19001D47D9 /* TableViewProtocolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE46DE9F1D994C19001D47D9 /* TableViewProtocolsTests.swift */; };
+		CE578FA31F558EF300BB86DA /* PickerViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE578FA21F558EF300BB86DA /* PickerViewDataSourceTests.swift */; };
 		CE6AF0E11E8D448F00148EB7 /* DataProtocolsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6AF0E01E8D448F00148EB7 /* DataProtocolsTests.swift */; };
 		CE7BC99C1D48BB4C007D181B /* WARPServices.h in Headers */ = {isa = PBXBuildFile; fileRef = CE7BC99B1D48BB4C007D181B /* WARPServices.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CE7BC9A31D48BB4C007D181B /* WARPServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CE7BC9981D48BB4C007D181B /* WARPServices.framework */; };
@@ -56,6 +57,7 @@
 		CE46DE9B1D994428001D47D9 /* ConfiguringProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfiguringProtocols.swift; sourceTree = "<group>"; };
 		CE46DE9D1D994500001D47D9 /* TableViewProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewProtocols.swift; sourceTree = "<group>"; };
 		CE46DE9F1D994C19001D47D9 /* TableViewProtocolsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewProtocolsTests.swift; sourceTree = "<group>"; };
+		CE578FA21F558EF300BB86DA /* PickerViewDataSourceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickerViewDataSourceTests.swift; sourceTree = "<group>"; };
 		CE6AF0E01E8D448F00148EB7 /* DataProtocolsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProtocolsTests.swift; sourceTree = "<group>"; };
 		CE7BC9981D48BB4C007D181B /* WARPServices.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WARPServices.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE7BC99B1D48BB4C007D181B /* WARPServices.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WARPServices.h; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				CE46DE9F1D994C19001D47D9 /* TableViewProtocolsTests.swift */,
 				CEAB9D7B1F4DD81400D5EE47 /* CollectionViewProtocolsTests.swift */,
 				CE14F2FE1E8E4425007C2A33 /* TableViewSectionHeaderTests.swift */,
+				CE578FA21F558EF300BB86DA /* PickerViewDataSourceTests.swift */,
 				CE6AF0E01E8D448F00148EB7 /* DataProtocolsTests.swift */,
 				CEE756C91E71980400F825CD /* IndexPathSetTests.swift */,
 				CE14F2FC1E8E4231007C2A33 /* DateFormatterTests.swift */,
@@ -319,6 +322,7 @@
 			files = (
 				CE14F3051E8E5F1C007C2A33 /* CellItemTests.swift in Sources */,
 				CE14F2FD1E8E4231007C2A33 /* DateFormatterTests.swift in Sources */,
+				CE578FA31F558EF300BB86DA /* PickerViewDataSourceTests.swift in Sources */,
 				CE6AF0E11E8D448F00148EB7 /* DataProtocolsTests.swift in Sources */,
 				CE14F2FF1E8E4425007C2A33 /* TableViewSectionHeaderTests.swift in Sources */,
 				CEAB9D7C1F4DD81400D5EE47 /* CollectionViewProtocolsTests.swift in Sources */,
