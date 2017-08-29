@@ -8,18 +8,18 @@
 
 import UIKit
 
-public protocol PickerViewDataSource {
+public protocol PickerViewDataSourceType {
     func numberOfComponents(in pickerView: UIPickerView) -> Int
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int
 }
 
-public extension PickerViewDataSource {
+public extension PickerViewDataSourceType {
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
 }
 
-public final class PickerViewDataSourceProxy<T: PickerViewDataSource>: NSObject, UIPickerViewDataSource {
+public final class PickerViewDataSource<T: PickerViewDataSourceType>: NSObject, UIPickerViewDataSource {
     public var dataSource: T
     
     public init(dataSource: T) {
