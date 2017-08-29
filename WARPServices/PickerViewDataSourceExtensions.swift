@@ -14,12 +14,12 @@ public extension PickerViewDataSourceType where Self: ItemsProviding {
     }
 }
 
-public extension PickerViewDataSourceType where Self: DataContaining, Self.CollectionType.IndexDistance == Int, Self.CollectionType.Index == Int, Self.CollectionType.Iterator.Element: DataContaining, Self.CollectionType.Iterator.Element.CollectionType.IndexDistance == Int, Self.CollectionType.Iterator.Element.CollectionType.Index == Int {
+public extension PickerViewDataSourceType where Self: ItemsProviding, Self.DataType: ItemsProviding {
     public func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return data.count
+        return numberOfElements
     }
     
     public func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return data[component].data.count
+        return item(at: component).numberOfElements
     }
 }
