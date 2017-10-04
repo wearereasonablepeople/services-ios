@@ -43,7 +43,7 @@ public extension DataContaining where Self.CollectionType.IndexDistance == Int {
     }
 }
 
-public extension DataContaining where Self.CollectionType.IndexDistance == IntMax {
+public extension DataContaining where Self.CollectionType.IndexDistance == Int64 {
     var numberOfElements: Int {
         return Int(data.count)
     }
@@ -99,7 +99,7 @@ public extension CollectionViewDataSourceType where Self: ItemsProviding, Self.D
     }
 }
 
-public extension CellProviderType where Self: ItemsProviding, Self: CellHandlerType, Self.DataType: CellIdentifierProvider, Self.DataType.CellIdentifier == CellIdentifier {
+public extension CellProviderType where Self: ItemsProviding, Self.DataType: CellIdentifierProvider, Self.DataType.CellIdentifier == CellIdentifier {
     public func identifier(for indexPath: IndexPath) -> CellIdentifier {
         return item(at: indexPath.section).cellIdentifier
     }
