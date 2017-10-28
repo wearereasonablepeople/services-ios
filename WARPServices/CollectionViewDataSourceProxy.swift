@@ -12,11 +12,16 @@ public protocol CollectionViewDataSourceType {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell
     func numberOfSections(in collectionView: UICollectionView) -> Int
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView
 }
 
 public extension CollectionViewDataSourceType {
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        return UICollectionReusableView()
     }
 }
 
@@ -37,5 +42,9 @@ public final class CollectionViewDataSource<T: CollectionViewDataSourceType>: NS
     
     public func numberOfSections(in collectionView: UICollectionView) -> Int {
         return item.numberOfSections(in: collectionView)
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        return item.collectionView(collectionView, viewForSupplementaryElementOfKind: kind, at: indexPath)
     }
 }
