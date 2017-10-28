@@ -22,6 +22,10 @@ public struct CellItem<T, C> {
     public func map<E>(_ transform: (T) -> E) -> CellItem<E, C> {
         return CellItem<E, C>(item: transform(item), cell: cell, at: indexPath)
     }
+    
+    public func mapCell<E>(to: E.Type) -> CellItem<T, E> {
+        return CellItem<T, E>(item: item, cell: cell as! E, at: indexPath)
+    }
 }
 
 public extension CellItem where T: Equatable, C: Equatable {

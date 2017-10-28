@@ -38,4 +38,12 @@ class CellItemTests: XCTestCase {
         XCTAssertEqual(cell.string, "testString")
     }
     
+    func testMapCell() {
+        class CustomCell: UITableViewCell {}
+        let cell = CustomCell()
+        let item = CellItem<Int, UITableViewCell>(item: 2, cell: cell, at: indexPath)
+        
+        XCTAssertEqual(item.mapCell(to: CustomCell.self).cell, cell)
+    }
+    
 }
